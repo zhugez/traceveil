@@ -1,0 +1,41 @@
+{
+  "workload": "Controlled synthetic Pi demo",
+  "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+  "trace_categories": [
+    "process",
+    "network",
+    "openat",
+    "openat2"
+  ],
+  "exec_count": 1,
+  "additional_process_creations": 0,
+  "network_syscalls": 0,
+  "network_syscall_names_checked": [
+    "socket",
+    "socketpair",
+    "bind",
+    "listen",
+    "accept",
+    "accept4",
+    "connect",
+    "getsockname",
+    "getpeername",
+    "shutdown",
+    "sendto",
+    "recvfrom",
+    "sendmsg",
+    "recvmsg",
+    "sendmmsg",
+    "recvmmsg",
+    "setsockopt",
+    "getsockopt"
+  ],
+  "source_open_count": 1,
+  "source_open_flags_verified": [
+    "O_RDONLY",
+    "O_NONBLOCK",
+    "O_NOFOLLOW",
+    "O_CLOEXEC"
+  ],
+  "scope": "Only this captured execution and enumerated syscalls. Not a universal security proof."
+}

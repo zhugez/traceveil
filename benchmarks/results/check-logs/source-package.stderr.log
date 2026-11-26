@@ -1,0 +1,5 @@
+   Packaging traceveil v0.1.0 (/home/dev/repos/traceveil)
+    Packaged 34 files, 193.2KiB (46.0KiB compressed)
+   Verifying traceveil v0.1.0 (/home/dev/repos/traceveil)
+   Compiling traceveil v0.1.0 (/home/dev/repos/traceveil/target/package/traceveil-0.1.0)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.37s

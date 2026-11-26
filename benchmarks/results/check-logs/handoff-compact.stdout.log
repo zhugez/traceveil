@@ -1,0 +1,10 @@
+TRACEVEIL / SESSION DIAGNOSTICS
+report 5b8ffcdb4f736ce7f9372c68 / pi
+Input coverage: supported records parsed / 27 selected records / 12 tool results
+@5b8ffcdb4f736ce7f9372c68:f001 MEDIUM Repeated equivalent tool failures (3 observations)
+@5b8ffcdb4f736ce7f9372c68:f002 MEDIUM Potential execution loop (6 observations)
+@5b8ffcdb4f736ce7f9372c68:f003 LOW    Potentially redundant file reads (3 observations)
+RF001: evaluated (9 eligible observations)
+LOOP001: evaluated (12 eligible observations)
+READ001: evaluated (3 eligible observations)
+Inspect evidence before changing the workflow. Reuse the source, leaf and threshold with inspect.

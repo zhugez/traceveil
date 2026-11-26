@@ -1,0 +1,91 @@
+{
+  "version": "traceveil 0.1.0",
+  "git_commit": "da0bc40664fa902d4c7ba7da3d16199dd8c95a59",
+  "uncommitted_source": true,
+  "source_tree_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+  "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+  "binary_bytes": 1265952,
+  "environment": {
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "cpu": "11th Gen Intel(R) Core(TM) i5-1155G7 @ 2.50GHz",
+    "logical_cpus": 6,
+    "physical_memory_bytes": 16771043328,
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)"
+  },
+  "startup_doctor_wall_ms": [
+    1.8065119984385092,
+    1.783067997166654,
+    1.810592002584599,
+    1.9688239990500733,
+    1.7622360028326511
+  ],
+  "workloads": {
+    "jsonl": {
+      "input_bytes": 4828890,
+      "operations": 20000,
+      "measurements": [
+        {
+          "wall_ms": 635.5698879997362,
+          "peak_rss_kib": 5420,
+          "output_bytes": 6803
+        },
+        {
+          "wall_ms": 646.5842949983198,
+          "peak_rss_kib": 5528,
+          "output_bytes": 6803
+        },
+        {
+          "wall_ms": 708.4482300015225,
+          "peak_rss_kib": 5492,
+          "output_bytes": 6803
+        },
+        {
+          "wall_ms": 661.7460970010143,
+          "peak_rss_kib": 5552,
+          "output_bytes": 6803
+        },
+        {
+          "wall_ms": 603.0202200017811,
+          "peak_rss_kib": 5388,
+          "output_bytes": 6803
+        }
+      ],
+      "median_wall_ms": 646.5842949983198,
+      "input_mib_per_second": 7.12233254870959
+    },
+    "pi": {
+      "input_bytes": 8973391,
+      "operations": 20000,
+      "measurements": [
+        {
+          "wall_ms": 1275.8285839991004,
+          "peak_rss_kib": 14480,
+          "output_bytes": 6844
+        },
+        {
+          "wall_ms": 1329.8185839994403,
+          "peak_rss_kib": 14260,
+          "output_bytes": 6844
+        },
+        {
+          "wall_ms": 1441.9699809986923,
+          "peak_rss_kib": 14600,
+          "output_bytes": 6844
+        },
+        {
+          "wall_ms": 1442.7093470003456,
+          "peak_rss_kib": 14144,
+          "output_bytes": 6844
+        },
+        {
+          "wall_ms": 1388.677209000889,
+          "peak_rss_kib": 14328,
+          "output_bytes": 6844
+        }
+      ],
+      "median_wall_ms": 1388.677209000889,
+      "input_mib_per_second": 6.162477840280821
+    }
+  },
+  "limitations": "Single local synthetic workload. OS cache is uncontrolled; these are not verified cold-start measurements. Diagnose wall times include the GNU time wrapper on Linux. No competitor or end-to-end agent-effectiveness comparison."
+}

@@ -1,0 +1,445 @@
+{
+  "status": "local_developer_preview_validated",
+  "evidence_type": "Actual command exit codes, retained stdout/stderr and explicit runtime-input bindings",
+  "source_manifest": "benchmarks/results/source-manifest.json",
+  "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2",
+  "source_manifest_history": [
+    "benchmarks/results/source-manifest.0088cc30.json",
+    "benchmarks/results/source-manifest.3d7496a6.json",
+    "benchmarks/results/source-manifest.5d3d1ea3.json",
+    "benchmarks/results/source-manifest.787298e4.json",
+    "benchmarks/results/source-manifest.af827de1.json",
+    "benchmarks/results/source-manifest.d1a9af26.json"
+  ],
+  "source_unchanged_during_checks": true,
+  "command_receipts": [
+    {
+      "check": "fmt",
+      "argv": [
+        "cargo",
+        "fmt",
+        "--check"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:14.495857+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/fmt.stdout.log",
+      "stderr": "benchmarks/results/check-logs/fmt.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "clippy",
+      "argv": [
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:14.680043+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/clippy.stdout.log",
+      "stderr": "benchmarks/results/check-logs/clippy.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0cdfb08d8359c159dce2abb57dbab7cd474df9b049231d6b3afefbf59f2b1a05",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "cargo-test",
+      "argv": [
+        "cargo",
+        "test",
+        "--locked"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:15.418159+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/cargo-test.stdout.log",
+      "stderr": "benchmarks/results/check-logs/cargo-test.stderr.log",
+      "stdout_sha256": "0aa8d7a1a3800b24f150a86963a2db8f26ccd9bcd8aca28228a2ec029722151a",
+      "stderr_sha256": "42c30cd7c1a0dd3fb4b55f0bf4abf745c7ca26c57ae64a8c6a71ba1704525d57",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "schemas-and-skills",
+      "argv": [
+        "uv",
+        "run",
+        "--no-project",
+        "--with",
+        "jsonschema>=4,<5",
+        "python",
+        "scripts/check_contracts.py"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:21.047816+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/schemas-and-skills.stdout.log",
+      "stderr": "benchmarks/results/check-logs/schemas-and-skills.stderr.log",
+      "stdout_sha256": "dba855a1dae57c4e6838283749df08c6139f6b35ef7d53fbaa4089b69f4a5dfa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "source-package",
+      "argv": [
+        "cargo",
+        "package",
+        "--allow-dirty",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:23.179354+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/source-package.stdout.log",
+      "stderr": "benchmarks/results/check-logs/source-package.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4c06fa5bec8afb7415363df3c8e8435acffc4a87cec9e6f1638a79712a8afd26",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "source-package-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "--manifest-path",
+        "target/package/traceveil-0.1.0/Cargo.toml",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:27.589742+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/source-package-tests.stdout.log",
+      "stderr": "benchmarks/results/check-logs/source-package-tests.stderr.log",
+      "stdout_sha256": "5a2c39d4406189bb6be535f6ab636159bf0e14e82b8235c133246d3dc39f1a9b",
+      "stderr_sha256": "06254de29dd6f9be1c4821542e0009bfcefc32d95fe908fac8059c4ede7fcfff",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "audit-version",
+      "argv": [
+        "/tmp/traceveil-audit-mwxvwzvu/cargo-audit-x86_64-unknown-linux-gnu-v0.23.0/cargo-audit",
+        "audit",
+        "--version"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:55.477582+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/audit-version.stdout.log",
+      "stderr": "benchmarks/results/check-logs/audit-version.stderr.log",
+      "stdout_sha256": "3d7ea9afd517182184d2c9c9d6f1048b2e2147e0f3b1b54a06f13b6f6f49dd01",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "audit",
+      "argv": [
+        "/tmp/traceveil-audit-mwxvwzvu/cargo-audit-x86_64-unknown-linux-gnu-v0.23.0/cargo-audit",
+        "audit",
+        "--json",
+        "--file",
+        "Cargo.lock"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:55.487358+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/audit.stdout.log",
+      "stderr": "benchmarks/results/check-logs/audit.stderr.log",
+      "stdout_sha256": "e603453fed28aa799feab9f34bd831d0c500baf6138201d8bf14738499273d31",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "deny-version",
+      "argv": [
+        "/tmp/traceveil-deny-mwxvwzvu/cargo-deny",
+        "--version"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:57.355948+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/deny-version.stdout.log",
+      "stderr": "benchmarks/results/check-logs/deny-version.stderr.log",
+      "stdout_sha256": "4f5284e68393b771a93381b39ba713b86d3e683bfd66a2d1672351fbc2e7c7bf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "license-sources",
+      "argv": [
+        "/tmp/traceveil-deny-mwxvwzvu/cargo-deny",
+        "--format",
+        "json",
+        "check",
+        "licenses",
+        "sources"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:57.362019+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/license-sources.stdout.log",
+      "stderr": "benchmarks/results/check-logs/license-sources.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "2bd711ff56e6d7a4cb9e033688c17b8e81fa0336ee1f8b1ec915150f9964fe0a",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "artifact-checksums",
+      "argv": [
+        "sha256sum",
+        "-c",
+        "SHA256SUMS"
+      ],
+      "cwd": "target/dist",
+      "started_at": "2026-11-26T22:57:58.114491+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/artifact-checksums.stdout.log",
+      "stderr": "benchmarks/results/check-logs/artifact-checksums.stderr.log",
+      "stdout_sha256": "22d5f3ba39af091ec84a5c12c9b87f695d7be4a432923fb6a5e7018b3337275e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    },
+    {
+      "check": "runtime-syscalls",
+      "argv": [
+        "strace",
+        "-f",
+        "-e",
+        "trace=process,network,openat,openat2",
+        "-o",
+        "target/traceveil-demo.strace",
+        "target/release/traceveil",
+        "diagnose",
+        "benchmarks/fixtures/demo.pi.jsonl",
+        "--agent",
+        "pi",
+        "--json"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-26T22:57:58.120424+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/check-logs/runtime-syscalls.stdout.log",
+      "stderr": "benchmarks/results/check-logs/runtime-syscalls.stderr.log",
+      "stdout_sha256": "da7b3efc7db41af75879b38b029ac3a00d55d8a04e166b6f60221581ce438cdd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "5d4b3c5b2f05eb33ffa74c3e240e1a2d7f710d2f2e48a89c9a532646b63e78d2"
+    }
+  ],
+  "retained_successful_checks": [
+    {
+      "check": "performance",
+      "argv": [
+        "python3",
+        "benchmarks/performance/measure.py"
+      ],
+      "execution": "Fresh successful execution after the mixed-telemetry coverage correction; runtime inputs verified",
+      "stdout": "benchmarks/results/check-logs/performance.stdout.log",
+      "stderr": "benchmarks/results/check-logs/performance.stderr.log",
+      "stdout_sha256": "fa44f5cb3cb75bb7b30461d421908de0f5dd191a98a1329b628f9ea36d20bd49",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+      "runtime_source_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+      "script_sha256": "5c51eb5a3e6547949251558f6c212d335adc669f938b9110036b05aca9c267b5",
+      "evidence_file": "benchmarks/results/performance.json",
+      "execution_receipt": {
+        "check": "performance",
+        "argv": [
+          "python3",
+          "benchmarks/performance/measure.py"
+        ],
+        "started_at": "2026-11-26T22:51:46.749322+00:00",
+        "exit_code": 0,
+        "stdout": "benchmarks/results/check-logs/performance.stdout.log",
+        "stderr": "benchmarks/results/check-logs/performance.stderr.log",
+        "stdout_sha256": "fa44f5cb3cb75bb7b30461d421908de0f5dd191a98a1329b628f9ea36d20bd49",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "started_at": "2026-11-26T22:51:46.749322+00:00",
+      "exit_code": 0
+    },
+    {
+      "check": "diagnostic-labels",
+      "argv": [
+        "python3",
+        "benchmarks/diagnostic/evaluate.py"
+      ],
+      "execution": "Fresh successful execution after the mixed-telemetry coverage correction; runtime inputs verified",
+      "stdout": "benchmarks/results/check-logs/diagnostic-labels.stdout.log",
+      "stderr": "benchmarks/results/check-logs/diagnostic-labels.stderr.log",
+      "stdout_sha256": "5953b8c4714a256c026af592959f82edc7568aa60437dc2d36575e95ed8fd9b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+      "runtime_source_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+      "script_sha256": "6e7cbd7c4d16f7be5d117a10fbf1020d3c28ee9309a4b859386c5b405ff28be5",
+      "evidence_file": "benchmarks/results/diagnostic.json",
+      "execution_receipt": {
+        "check": "diagnostic-labels",
+        "argv": [
+          "python3",
+          "benchmarks/diagnostic/evaluate.py"
+        ],
+        "started_at": "2026-11-26T22:51:46.516316+00:00",
+        "exit_code": 0,
+        "stdout": "benchmarks/results/check-logs/diagnostic-labels.stdout.log",
+        "stderr": "benchmarks/results/check-logs/diagnostic-labels.stderr.log",
+        "stdout_sha256": "5953b8c4714a256c026af592959f82edc7568aa60437dc2d36575e95ed8fd9b3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "started_at": "2026-11-26T22:51:46.516316+00:00",
+      "exit_code": 0
+    },
+    {
+      "check": "local-package",
+      "argv": [
+        "python3",
+        "scripts/package.py"
+      ],
+      "execution": "Fresh successful execution after the mixed-telemetry coverage correction; runtime inputs verified",
+      "stdout": "benchmarks/results/check-logs/local-package.stdout.log",
+      "stderr": "benchmarks/results/check-logs/local-package.stderr.log",
+      "stdout_sha256": "61338e7688ee151778ec97b02bb85991c1288857215fa156a1bfc2b0e79e88aa",
+      "stderr_sha256": "765f1396d07f30f3a451cd3f9d9cad4e83c92c8e0aecf955ffc09061a6cf1e02",
+      "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+      "runtime_source_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+      "script_sha256": "d2ebc473d5ef2aab2d9f57ddaa86891441b2b8de19c2c93f871fc1bd6789170c",
+      "evidence_file": null,
+      "execution_receipt": {
+        "check": "local-package",
+        "argv": [
+          "python3",
+          "scripts/package.py"
+        ],
+        "started_at": "2026-11-26T22:51:58.063554+00:00",
+        "exit_code": 0,
+        "stdout": "benchmarks/results/check-logs/local-package.stdout.log",
+        "stderr": "benchmarks/results/check-logs/local-package.stderr.log",
+        "stdout_sha256": "61338e7688ee151778ec97b02bb85991c1288857215fa156a1bfc2b0e79e88aa",
+        "stderr_sha256": "765f1396d07f30f3a451cd3f9d9cad4e83c92c8e0aecf955ffc09061a6cf1e02"
+      },
+      "started_at": "2026-11-26T22:51:58.063554+00:00",
+      "exit_code": 0
+    },
+    {
+      "check": "clean-prefix-installation",
+      "argv": [
+        "python3",
+        "scripts/check_install.py"
+      ],
+      "execution": "Fresh successful execution after the mixed-telemetry coverage correction; runtime inputs verified",
+      "stdout": "benchmarks/results/check-logs/clean-prefix-installation.stdout.log",
+      "stderr": "benchmarks/results/check-logs/clean-prefix-installation.stderr.log",
+      "stdout_sha256": "cc757da48c35f41112e5ed57d9c7687f423eca8f84ccfcf92aca1f483e55b384",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+      "runtime_source_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+      "script_sha256": "066b8d237cfb5d2983a3d9b8906cea5ac1051faed9ed0c04724bdff16d051808",
+      "evidence_file": "benchmarks/results/installation.json",
+      "execution_receipt": {
+        "check": "clean-prefix-installation",
+        "argv": [
+          "python3",
+          "scripts/check_install.py"
+        ],
+        "started_at": "2026-11-26T22:52:15.717982+00:00",
+        "exit_code": 0,
+        "stdout": "benchmarks/results/check-logs/clean-prefix-installation.stdout.log",
+        "stderr": "benchmarks/results/check-logs/clean-prefix-installation.stderr.log",
+        "stdout_sha256": "cc757da48c35f41112e5ed57d9c7687f423eca8f84ccfcf92aca1f483e55b384",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "started_at": "2026-11-26T22:52:15.717982+00:00",
+      "exit_code": 0
+    },
+    {
+      "check": "demo",
+      "argv": [
+        "python3",
+        "scripts/demo.py"
+      ],
+      "execution": "Fresh successful execution after the mixed-telemetry coverage correction; runtime inputs verified",
+      "stdout": "benchmarks/results/check-logs/demo.stdout.log",
+      "stderr": "benchmarks/results/check-logs/demo.stderr.log",
+      "stdout_sha256": "9a3d2a62eca2696e76b828e79c9c7066d19d5cdfd4030c8a471808bff9cc0dd2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+      "runtime_source_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+      "script_sha256": "69a29efa7e4b930f37dd89c131664047b1f849481c99b918983ad5a9a412e8fd",
+      "evidence_file": "benchmarks/results/demo.txt",
+      "execution_receipt": {
+        "check": "demo",
+        "argv": [
+          "python3",
+          "scripts/demo.py"
+        ],
+        "started_at": "2026-11-26T22:51:57.883291+00:00",
+        "exit_code": 0,
+        "stdout": "benchmarks/results/check-logs/demo.stdout.log",
+        "stderr": "benchmarks/results/check-logs/demo.stderr.log",
+        "stdout_sha256": "9a3d2a62eca2696e76b828e79c9c7066d19d5cdfd4030c8a471808bff9cc0dd2",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "started_at": "2026-11-26T22:51:57.883291+00:00",
+      "exit_code": 0
+    }
+  ],
+  "observed_rust_tests": {
+    "passed": 31,
+    "failed": 0,
+    "ignored": 0
+  },
+  "observed_schema_results": {
+    "canonical_fixtures_validated": 13,
+    "pi_report_schema": "passed",
+    "error_schema": "passed",
+    "inspect_schema": "passed",
+    "skill_frontmatter_and_runtime_examples": "passed"
+  },
+  "authored_source_whitespace": {
+    "files_checked": 50,
+    "trailing_whitespace_findings": [],
+    "scope": "Declared authored source, including untracked files. Original LICENSE/.gitignore preserved."
+  },
+  "local_markdown_files_checked": 15,
+  "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+  "runtime_source_sha256": "9563fe61b65c2a91072070bcbecdd87a8e29fcaebd6ca3d2791956624fe538c5",
+  "source_package_sha256": "a809a0635494adcd192c9eb076c9e8b8425ee4646229b7049ab6bf978a50dcc2",
+  "authorized_real_session_evidence": "benchmarks/results/real-pi-validation.json",
+  "real_case_limit": "No positive finding or field-accuracy claim. Nested codemode remains partial and READ001 was skipped.",
+  "correlation_regression": {
+    "pre_fix_log": "benchmarks/results/check-logs/correlation-before-fix.log",
+    "scope": "Synthetic native custom-boundary reproduction plus canonical boundaries, all rules, interleaving, duplicate IDs and pending-limit checks"
+  },
+  "unverified_or_not_claimed": [
+    "macOS/Windows/remote CI and older-glibc portability are unverified",
+    "Publication, signed provenance, broad field accuracy and agent-effectiveness studies are not claimed"
+  ],
+  "independent_review_scope": "Decision/change review of visible evidence and bounded excerpts. Not a full-source security endorsement.",
+  "mixed_telemetry_audit_regression": {
+    "test": "mixed_missing_telemetry_is_partial_and_require_complete_rejects_it",
+    "before_fix_log": "benchmarks/results/check-logs/mixed-coverage-before-fix.log",
+    "release_reproduction": {
+      "argv": [
+        "target/release/traceveil",
+        "diagnose",
+        "--stdin",
+        "--json",
+        "--require-complete"
+      ],
+      "exit_code": 3,
+      "stdin_sha256": "3e8abaecdc3978e6d5189b8c69ebf63c2c873b2e8d3595164b27f4dcd77f40cb",
+      "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603",
+      "stdout": "benchmarks/results/check-logs/mixed-coverage-after-fix.stdout.log",
+      "stdout_sha256": "5fa70a54fc211e6af4dd96f2ca0ecfd9fe942b307b711594440781b159bf010e",
+      "stderr": "benchmarks/results/check-logs/mixed-coverage-after-fix.stderr.log",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "coverage_policy": "Missing required telemetry warns and makes eligible rules partial; unknown-only remains skipped. Findings retain supported evidence."
+  }
+}

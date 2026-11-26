@@ -1,0 +1,36 @@
+   Compiling traceveil v0.1.0 (/home/dev/repos/traceveil)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.57s
+     Running unittests src/lib.rs (target/debug/deps/traceveil-0a05dcda2890aed6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/traceveil-c3a620819fb68e74)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/preview.rs (target/debug/deps/preview-07132e3730ac91f7)
+
+running 1 test
+test mixed_missing_telemetry_is_partial_and_require_complete_rejects_it ... FAILED
+
+failures:
+
+---- mixed_missing_telemetry_is_partial_and_require_complete_rejects_it stdout ----
+
+thread 'mixed_missing_telemetry_is_partial_and_require_complete_rejects_it' (613462) panicked at tests/preview.rs:947:13:
+assertion `left == right` failed
+  left: Bool(true)
+ right: false
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    mixed_missing_telemetry_is_partial_and_require_complete_rejects_it
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 28 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--test preview`

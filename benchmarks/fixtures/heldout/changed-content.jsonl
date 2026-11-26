@@ -1,0 +1,3 @@
+{"schema_version":"1.0","event_id":"e0","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"read","arguments":{"path":"src/lib.rs"},"output":"v1","success":true,"output_complete":true}}
+{"schema_version":"1.0","event_id":"e1","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"read","arguments":{"path":"src/lib.rs"},"output":"v2","success":true,"output_complete":true}}
+{"schema_version":"1.0","event_id":"e2","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"read","arguments":{"path":"src/lib.rs"},"output":"v3","success":true,"output_complete":true}}

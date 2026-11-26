@@ -1,0 +1,416 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Traceveil diagnose response envelope 1.0",
+  "$defs": {
+    "Evidence": {
+      "type": "object",
+      "required": [
+        "event_ref",
+        "record_line",
+        "call_record_line",
+        "source_event_sha256",
+        "tool",
+        "arguments_sha256",
+        "output_sha256",
+        "success",
+        "exit_code",
+        "read_range_complete"
+      ],
+      "properties": {
+        "event_ref": {
+          "type": "string"
+        },
+        "record_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "call_record_line": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "source_event_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "tool": {
+          "enum": [
+            "bash",
+            "read",
+            "write",
+            "edit",
+            "test",
+            "search",
+            "fetch",
+            "other"
+          ]
+        },
+        "arguments_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "output_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "success": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "exit_code": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "read_range_complete": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "Finding": {
+      "type": "object",
+      "required": [
+        "reference",
+        "rule_id",
+        "severity",
+        "category",
+        "description",
+        "classification",
+        "confidence",
+        "methodology",
+        "limitations",
+        "recommendation",
+        "occurrences",
+        "evidence",
+        "evidence_omitted"
+      ],
+      "properties": {
+        "reference": {
+          "type": "string",
+          "pattern": "^@[a-f0-9]{24}:f[0-9]{3}$"
+        },
+        "rule_id": {
+          "enum": [
+            "RF001",
+            "LOOP001",
+            "READ001"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "informational",
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "category": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "classification": {
+          "const": "heuristic"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "methodology": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "string"
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "occurrences": {
+          "type": "integer",
+          "minimum": 3
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          }
+        },
+        "evidence_omitted": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "Report": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "traceveil_version",
+        "report_id",
+        "session_sha256",
+        "source_sha256",
+        "adapter",
+        "leaf_sha256",
+        "complete",
+        "coverage",
+        "findings",
+        "findings_omitted",
+        "warnings",
+        "warnings_omitted",
+        "limits"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "traceveil_version": {
+          "type": "string"
+        },
+        "report_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{24}$"
+        },
+        "session_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "adapter": {
+          "enum": [
+            "pi",
+            "jsonl"
+          ]
+        },
+        "leaf_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "coverage": {
+          "type": "object",
+          "required": [
+            "records",
+            "selected_records",
+            "malformed_records",
+            "unknown_records",
+            "unpaired_calls",
+            "tool_calls",
+            "tool_results",
+            "known_success",
+            "complete_reads",
+            "rules"
+          ],
+          "properties": {
+            "records": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "selected_records": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "malformed_records": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unknown_records": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "unpaired_calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool_calls": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "tool_results": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "known_success": {
+              "description": "Counts results with an explicitly recorded true or false success status. Both recorded success and recorded failure contribute; unknown status is excluded.",
+              "type": "integer",
+              "minimum": 0
+            },
+            "complete_reads": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "rules": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "required": [
+                  "rule_id",
+                  "status",
+                  "eligible_observations",
+                  "limitations"
+                ],
+                "properties": {
+                  "rule_id": {
+                    "enum": [
+                      "RF001",
+                      "LOOP001",
+                      "READ001"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "evaluated",
+                      "partial",
+                      "skipped"
+                    ]
+                  },
+                  "eligible_observations": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "limitations": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "findings": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/Finding"
+          }
+        },
+        "findings_omitted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warnings": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "required": [
+              "code",
+              "record_line"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "record_line": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            }
+          }
+        },
+        "warnings_omitted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "limits": {
+          "type": "object",
+          "required": [
+            "input_bytes",
+            "record_bytes",
+            "records",
+            "normalized_events",
+            "pending_calls",
+            "findings",
+            "evidence_per_finding",
+            "warnings"
+          ],
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "ok",
+        "command",
+        "data"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "ok": {
+          "const": true
+        },
+        "command": {
+          "const": "diagnose"
+        },
+        "data": {
+          "$ref": "#/$defs/Report"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "ok",
+        "error"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "ok": {
+          "const": false
+        },
+        "error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "pattern": "^[A-Z_]+$"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

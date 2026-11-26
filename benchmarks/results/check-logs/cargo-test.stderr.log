@@ -1,0 +1,6 @@
+   Compiling traceveil v0.1.0 (/home/dev/repos/traceveil)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.97s
+     Running unittests src/lib.rs (target/debug/deps/traceveil-0a05dcda2890aed6)
+     Running unittests src/main.rs (target/debug/deps/traceveil-c3a620819fb68e74)
+     Running tests/preview.rs (target/debug/deps/preview-07132e3730ac91f7)
+   Doc-tests traceveil

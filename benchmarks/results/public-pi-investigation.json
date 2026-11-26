@@ -1,0 +1,138 @@
+{
+  "status": "exploratory_compatibility_check_only_not_real_session_acceptance",
+  "public_provenance": {
+    "repository": "earendil-works/pi",
+    "commit": "b0628601d7265f77597c21cfe3be352047214a40",
+    "repository_license": "MIT",
+    "fixture": "packages/coding-agent/test/fixtures/large-session.jsonl",
+    "upstream_real_data_statement": "packages/coding-agent/test/compaction.test.ts:585",
+    "upstream_official_migration_usage": "packages/coding-agent/test/compaction.test.ts:34-39",
+    "owner_authorization_for_acceptance": "not_established"
+  },
+  "migration": {
+    "source": "/tmp/traceveil-public-large-session.jsonl",
+    "original_sha256": "f029e59c3aec82fd6227eae51fc8839862a92b5e2426731ea9715eaf968a0ba4",
+    "original_unchanged": true,
+    "sdk_package_version": "1.6.1",
+    "migrator_module_sha256": "bd7a15cc87b3e0ee99c9093fcd4b66694eb6fb6a0db9a809fe03d4fa80242e1f",
+    "node_version": "v24.18.0",
+    "copies": [
+      {
+        "path": "/tmp/traceveil-public-pi-LIksk9/a.pi.jsonl",
+        "sha256": "ca7fd51965307257c75d942d84530712173922d4408999a2230e40c3f2361c0e",
+        "records": 1019,
+        "selected_non_header_entries": 1018,
+        "first_generated_id": "ca021456",
+        "last_generated_id": "4d5f033b"
+      },
+      {
+        "path": "/tmp/traceveil-public-pi-LIksk9/b.pi.jsonl",
+        "sha256": "194998d5c88f5d06d8043e2894c2b6199f47501716e0c4de7e7775cf42e48f10",
+        "records": 1019,
+        "selected_non_header_entries": 1018,
+        "first_generated_id": "0c534cb2",
+        "last_generated_id": "02965658"
+      }
+    ],
+    "generated_ids_vary": true,
+    "scope": "Upstream-designated real v1 fixture, officially migrated to v3. Generated linear ancestry does not establish native v3 branching. Owner-authorization acceptance remains unverified."
+  },
+  "independently_counted_original_observations": {
+    "tool_calls": 391,
+    "tool_results": 373,
+    "calls_without_recorded_result": 18,
+    "results_without_recorded_call": 0,
+    "recorded_success": 354,
+    "recorded_failure": 19
+  },
+  "coverage": {
+    "complete_reads": 44,
+    "known_success": 373,
+    "malformed_records": 0,
+    "records": 1019,
+    "rules": [
+      {
+        "eligible_observations": 19,
+        "limitations": "Exact consecutive failed operations with matching recorded output. Intent and time-based retry policy are unknown.",
+        "rule_id": "RF001",
+        "status": "partial"
+      },
+      {
+        "eligible_observations": 63,
+        "limitations": "Repeated blocks of 2\u20134 recorded operations. Matching observations do not prove lack of progress.",
+        "rule_id": "LOOP001",
+        "status": "partial"
+      },
+      {
+        "eligible_observations": 44,
+        "limitations": "Consecutive complete matching read ranges. Matching content does not establish that verification was unnecessary.",
+        "rule_id": "READ001",
+        "status": "partial"
+      }
+    ],
+    "selected_records": 1018,
+    "tool_calls": 391,
+    "tool_results": 373,
+    "unknown_records": 0,
+    "unpaired_calls": 18
+  },
+  "findings_observed": 0,
+  "usefulness_assessment": "Confirms legacy-real-data compatibility after official migration and exposes incomplete telemetry. The no-findings result is not a clean bill or evidence of actionable diagnostic usefulness. This does not close the mandatory owner-authorized real-session gate.",
+  "native_v3_branching": "Not covered: IDs and linear parents are migration-generated",
+  "same_input_repeat_output": "Byte-identical in repeated CLI runs",
+  "generated_ids_reproducibility": "IDs differ on fresh official migrations; reports/digests vary. Coverage counts were identical.",
+  "selected_prefix_records": 509,
+  "checks": [
+    {
+      "label": "selected-prefix",
+      "argv": [
+        "target/release/traceveil",
+        "diagnose",
+        "/tmp/traceveil-public-pi-LIksk9/a.pi.jsonl",
+        "--agent",
+        "pi",
+        "--leaf",
+        "7ae97e98",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "target/public-pi-selected-prefix.json",
+      "stdout_sha256": "ca8a30bb9141dd7073847fe7c837fbb0c9635d6ffc7e9a6b644a02509eb6940d"
+    },
+    {
+      "label": "require-complete",
+      "argv": [
+        "target/release/traceveil",
+        "diagnose",
+        "/tmp/traceveil-public-pi-LIksk9/a.pi.jsonl",
+        "--agent",
+        "pi",
+        "--json",
+        "--require-complete"
+      ],
+      "exit_code": 3,
+      "stdout": "target/public-pi-require-complete.json",
+      "stdout_sha256": "55051bdcd9edf89a1818ba1a9cc82d0f1a96dea17a2008318daa471c3c553cfb"
+    },
+    {
+      "label": "legacy-rejection",
+      "argv": [
+        "target/release/traceveil",
+        "diagnose",
+        "/tmp/traceveil-public-large-session.jsonl",
+        "--agent",
+        "pi",
+        "--json"
+      ],
+      "exit_code": 2,
+      "stdout": "target/public-pi-legacy-rejection.json",
+      "stdout_sha256": "8f658768a08e5ae3c443f214e8f31241187c860f66960d3247c3fbda8ede40a2"
+    }
+  ],
+  "binary_sha256": "90493166bf1327d5faaea552422bf5fa177243d12713e17d4c1dedb979648624",
+  "migration_helper_sha256": "a58ecb37e69bcd4393e2a90a03f5fcba5a7747ebc6e889ecff69e1dcc99495c9",
+  "source_snapshot_sha256": "5d3d1ea3e105675cb2b70485414ac6f04df289f506b52b590be149b6bf60a664",
+  "source_snapshot_unchanged": true,
+  "raw_transcript_retained_in_repository": false,
+  "goal_complete": false
+}

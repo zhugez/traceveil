@@ -1,0 +1,89 @@
+{
+  "methodology": "Labels specify observable candidate patterns, not established waste or root cause. Held-out cases were labeled before their first diagnostic run. Authored by the implementing agent; not an independent human-labeled dataset.",
+  "cases": [
+    {
+      "file": "dev/failures.jsonl",
+      "split": "dev",
+      "expected_rules": [
+        "RF001"
+      ],
+      "rationale": "Three exact consecutive failures"
+    },
+    {
+      "file": "dev/loop.jsonl",
+      "split": "dev",
+      "expected_rules": [
+        "LOOP001"
+      ],
+      "rationale": "Three repetitions of a two-operation failure block"
+    },
+    {
+      "file": "dev/reads.jsonl",
+      "split": "dev",
+      "expected_rules": [
+        "READ001"
+      ],
+      "rationale": "Three complete identical reads"
+    },
+    {
+      "file": "dev/healthy.jsonl",
+      "split": "dev",
+      "expected_rules": [],
+      "rationale": "Legitimate/changed/interrupted activity must not be flagged"
+    },
+    {
+      "file": "heldout/persistent-failure.jsonl",
+      "split": "heldout",
+      "expected_rules": [
+        "RF001"
+      ],
+      "rationale": "Four exact failures of a different command"
+    },
+    {
+      "file": "heldout/repeated-block.jsonl",
+      "split": "heldout",
+      "expected_rules": [
+        "LOOP001"
+      ],
+      "rationale": "Four repetitions of a different two-operation block"
+    },
+    {
+      "file": "heldout/matching-range.jsonl",
+      "split": "heldout",
+      "expected_rules": [
+        "READ001"
+      ],
+      "rationale": "Four matching complete ranges"
+    },
+    {
+      "file": "heldout/transient-retry.jsonl",
+      "split": "heldout",
+      "expected_rules": [],
+      "rationale": "Legitimate/changed/interrupted activity must not be flagged"
+    },
+    {
+      "file": "heldout/deliberate-verification.jsonl",
+      "split": "heldout",
+      "expected_rules": [],
+      "rationale": "Legitimate/changed/interrupted activity must not be flagged"
+    },
+    {
+      "file": "heldout/changed-content.jsonl",
+      "split": "heldout",
+      "expected_rules": [],
+      "rationale": "Legitimate/changed/interrupted activity must not be flagged"
+    },
+    {
+      "file": "heldout/test-driven-development.jsonl",
+      "split": "heldout",
+      "expected_rules": [],
+      "rationale": "Legitimate/changed/interrupted activity must not be flagged"
+    },
+    {
+      "file": "heldout/failed-write-side-effect.jsonl",
+      "split": "heldout",
+      "expected_rules": [],
+      "rationale": "Legitimate/changed/interrupted activity must not be flagged"
+    }
+  ]
+}

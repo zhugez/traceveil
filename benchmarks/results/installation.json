@@ -1,0 +1,28 @@
+{
+  "native_archive": {
+    "version": "traceveil 0.1.0",
+    "runtime_path": "/nonexistent",
+    "cwd": "fresh temporary directory",
+    "embedded_skill": "passed",
+    "three_rule_report": "passed",
+    "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603"
+  },
+  "npm_tarball": {
+    "version": "traceveil 0.1.0",
+    "runtime_path": "/nonexistent",
+    "cwd": "fresh temporary directory",
+    "embedded_skill": "passed",
+    "three_rule_report": "passed",
+    "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603"
+  },
+  "cargo_clean_prefix": {
+    "version": "traceveil 0.1.0",
+    "runtime_path": "/nonexistent",
+    "cwd": "fresh temporary directory",
+    "embedded_skill": "passed",
+    "three_rule_report": "passed",
+    "binary_sha256": "6ca704451b846dd3ae351752cbb1fe7d33e5d891a82df4ed54c3d66822bef603"
+  },
+  "artifact_checksums": "passed",
+  "limits": "Linux x86_64 WSL2/glibc only. Build caches retained; installation prefixes, runtime PATH and runtime working directories were fresh."
+}

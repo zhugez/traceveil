@@ -1,0 +1,8 @@
+{"schema_version":"1.0","event_id":"e0","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"read","arguments":{"path":"src/lib.rs"},"output":"pub fn answer() -> u8 { 42 }","success":true,"output_complete":true}}
+{"schema_version":"1.0","event_id":"e1","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"read","arguments":{"path":"src/lib.rs"},"output":"pub fn answer() -> u8 { 42 }","success":true,"output_complete":true}}
+{"schema_version":"1.0","event_id":"e2","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"edit","arguments":{"path":"src/lib.rs"},"output":"edited A","success":true}}
+{"schema_version":"1.0","event_id":"e3","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"bash","arguments":{"command":"cargo test"},"output":"test parser::roundtrip FAILED","success":false}}
+{"schema_version":"1.0","event_id":"e4","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"edit","arguments":{"path":"src/lib.rs"},"output":"edited B","success":true}}
+{"schema_version":"1.0","event_id":"e5","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"bash","arguments":{"command":"cargo test"},"output":"test parser::roundtrip FAILED","success":false}}
+{"schema_version":"1.0","event_id":"e6","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"edit","arguments":{"path":"src/lib.rs"},"output":"edited C","success":true}}
+{"schema_version":"1.0","event_id":"e7","session_id":"demo-session","event_type":"tool.execution.completed","data":{"tool":"bash","arguments":{"command":"cargo test"},"output":"passed","success":true}}

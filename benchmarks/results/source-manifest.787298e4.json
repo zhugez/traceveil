@@ -1,0 +1,215 @@
+{
+  "algorithm": "SHA256(relative UTF-8 path + NUL + file bytes), sorted declared paths",
+  "aggregate_sha256": "787298e4782c25e4bf0a9ec2e869fc4fa29e6c71e532f670212764a7c5b15b46",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "23540274b38a98709dcf6e7f2285b5b9629a665ab38e37e4e0cf777ed03eb668"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "26431918e449693f4385438e3955a1e078dbc9a4c78e68d8e6caf7a21647b1ff"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "da2fd90baea8115fcddb3950e622ab17f283054b2f8fafab2541d8ec18188142"
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "54729dce9c30456fdd02c60493c319a23fc72b421107f4d5f7bff27a0e286018"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "8ccc9c1dd564e41b5842dba6e6d196643539afc46ef19f4af2f48f55168cf5f4"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d0581a90053dc019eae9ab629d6fc13e17593d5a985e6d8ea70bfd84c2f8f30d"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "4017226a47fc3cf0f77564d6f3bae01fba7573c9aad15d2c2912291bf0e27ac9"
+    },
+    {
+      "path": "benchmarks/diagnostic/evaluate.py",
+      "sha256": "6e7cbd7c4d16f7be5d117a10fbf1020d3c28ee9309a4b859386c5b405ff28be5"
+    },
+    {
+      "path": "benchmarks/fixtures/demo.jsonl",
+      "sha256": "1d8b1dde8e85b6574258a78a6baefeb9a3a7ce43e293dde6bcf780ef5f43e0f3"
+    },
+    {
+      "path": "benchmarks/fixtures/demo.pi.jsonl",
+      "sha256": "02f005898a0a767a742eb1f4c772e2220937ecf5f7cfa2c4b1631567f2722fd1"
+    },
+    {
+      "path": "benchmarks/fixtures/dev/failures.jsonl",
+      "sha256": "52b9a89452eebb064d3fa51a35b3311d68403641c767647da2d36bf487abb81d"
+    },
+    {
+      "path": "benchmarks/fixtures/dev/healthy.jsonl",
+      "sha256": "9a8dc64decbdc66a84c2827500ea1063e1011402341ac215a30a75d010bb0c8d"
+    },
+    {
+      "path": "benchmarks/fixtures/dev/loop.jsonl",
+      "sha256": "bbf423c1368ec52f193d40e2a564e2c8a2b2c663d8b182d390bd7cfbdda7bb5d"
+    },
+    {
+      "path": "benchmarks/fixtures/dev/reads.jsonl",
+      "sha256": "98cd006c02d18f4368c468c2ab37ed9018a0a4bd0436656700abdcf21310b11c"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/changed-content.jsonl",
+      "sha256": "d378bcaa34934979f9aa920b4216926756f39ecbe9593a46ac3bc082ccd02ebe"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/deliberate-verification.jsonl",
+      "sha256": "784127a17dcf78232baed83ac3d6e480b20f78678f841a0acd354f78f708a761"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/failed-write-side-effect.jsonl",
+      "sha256": "e5dfc4c84ad9e3fbc132ccc165f51d31f174867c1997b3aca26670541dc40bec"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/matching-range.jsonl",
+      "sha256": "86b533614a1d084c37ddcd9fe95dd8a0445c4d14c9f2955304c11b89b923f84a"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/persistent-failure.jsonl",
+      "sha256": "5d418eaa848071581deeaaceaceb84cc394a4cb4f4afcc16497a5e2d7f245201"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/repeated-block.jsonl",
+      "sha256": "2eab15f242826f0bb636b2241b2d14522dd670bd0186dfa371184140ac5c3cfc"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/test-driven-development.jsonl",
+      "sha256": "ab535e9132a9159eb3ff86b8de41a7b8f274699e72ccfa3f110bebe5feb6bca8"
+    },
+    {
+      "path": "benchmarks/fixtures/heldout/transient-retry.jsonl",
+      "sha256": "f7902bd8978a66dfcf65d48bf27bb74eea2b11c6f7a9efb148056c66401fb5e1"
+    },
+    {
+      "path": "benchmarks/fixtures/labels.json",
+      "sha256": "d32ad65d6722b04c2a25ef41591787510e0b968816ad39535eafb1d94dfe67e1"
+    },
+    {
+      "path": "benchmarks/performance/measure.py",
+      "sha256": "5c51eb5a3e6547949251558f6c212d335adc669f938b9110036b05aca9c267b5"
+    },
+    {
+      "path": "deny.toml",
+      "sha256": "5936a29c7bfa6d666eaee2488a1ae25a41c004cdab4c17f319584c83e21dd69a"
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "edb24d9512fe9d2b9056791fe20f89614a35a84904f1f1708a197268dbdd4079"
+    },
+    {
+      "path": "docs/benchmarks.md",
+      "sha256": "e23d184c091f46e7a6fb54b34f93a1fe11a55127199d7dde7e7f47d39cb32c12"
+    },
+    {
+      "path": "docs/diagnostics.md",
+      "sha256": "dddd2c0713918958b52a11db8ec1e91de30bf19200c6ba2e55d84c38219dd2bd"
+    },
+    {
+      "path": "docs/plan/PROGRESS.md",
+      "sha256": "e1c344bee24e7207213a8df13003aac432338efbe42b98d3c69af4fadf4a7f70"
+    },
+    {
+      "path": "docs/research/competitive-analysis.md",
+      "sha256": "474cb9b596cddd52dc52198a794005459e651cbc92108bd1301353bfd392d5b3"
+    },
+    {
+      "path": "docs/research/market-gap.md",
+      "sha256": "e8a19d1171b461f35b13497c20fb1ff3315b77771b57f79768596aa409396923"
+    },
+    {
+      "path": "docs/research/vercel-agent-tools-study.md",
+      "sha256": "88dc462a4d138c730f5920ad738ee13d72a18bf057800a63f3676dca08b8f6a6"
+    },
+    {
+      "path": "docs/security/privacy-model.md",
+      "sha256": "115c518d1d9470f01427630496f221dadb9c20fe70b4e528f6d6a913b2fb32a5"
+    },
+    {
+      "path": "docs/security/threat-model.md",
+      "sha256": "2cb6f1fba5496c978db1c398f4fd8c963a6db4c53026835fdf61ecc83cfcf246"
+    },
+    {
+      "path": "docs/usage.md",
+      "sha256": "ba135389ac31efd256fd2a1c7583ada44e6f66a48b22296117769ed33e7abafc"
+    },
+    {
+      "path": "schemas/event.schema.json",
+      "sha256": "fe7859a29279184f6e45d18e4b45c68201b58720e9f6afd8edbf3bf2be5ee796"
+    },
+    {
+      "path": "schemas/report.schema.json",
+      "sha256": "8da0112bbd47d8ad2d9cd2947b28a5349df1766b909797ec2ced88f5e4ab1e8f"
+    },
+    {
+      "path": "scripts/check_contracts.py",
+      "sha256": "9b1859fecb47a8a6a7b9395122fe80cff085b9b3d56e3076481d39c454c37cb4"
+    },
+    {
+      "path": "scripts/check_install.py",
+      "sha256": "066b8d237cfb5d2983a3d9b8906cea5ac1051faed9ed0c04724bdff16d051808"
+    },
+    {
+      "path": "scripts/demo.py",
+      "sha256": "69a29efa7e4b930f37dd89c131664047b1f849481c99b918983ad5a9a412e8fd"
+    },
+    {
+      "path": "scripts/package.py",
+      "sha256": "d2ebc473d5ef2aab2d9f57ddaa86891441b2b8de19c2c93f871fc1bd6789170c"
+    },
+    {
+      "path": "skill-data/core.md",
+      "sha256": "af871ca1e3dd746bc7eb065c3d3548b9c368210cce0d1359c492cd5a78e3a594"
+    },
+    {
+      "path": "skills/traceveil/SKILL.md",
+      "sha256": "a0141b731c8792544a73314917ca9871a02efeab7a33a31ca8772f7086f3a74b"
+    },
+    {
+      "path": "src/adapter_tests.rs",
+      "sha256": "b6aaf2a02837ddea3e3376e296ae3d73efe0744555d20c3e52f1255f1bbdda27"
+    },
+    {
+      "path": "src/adapters.rs",
+      "sha256": "28d5fbbd723793337894867b90df57e60033605215aa1a6a6380b05d0c7bf574"
+    },
+    {
+      "path": "src/diagnostics.rs",
+      "sha256": "3ee180304bd0b18372a64c8fd5b817e5050b8024e2c2e02e65e06a661483db34"
+    },
+    {
+      "path": "src/events.rs",
+      "sha256": "3842de1e3da59a34602e9372fc75a3977d6a52f86e1e4e26e5534593bb163e09"
+    },
+    {
+      "path": "src/lib.rs",
+      "sha256": "228cd7303a6d9666bdc051208717b9a4ca355d5f61a4f090480bfbf1daa58326"
+    },
+    {
+      "path": "src/main.rs",
+      "sha256": "eca55ab4e7b16f80e7969f35c24606a05adf508832c53bc32a9a642f01560a38"
+    },
+    {
+      "path": "src/report.rs",
+      "sha256": "90b9963888fc2b8fb6cdf58881d19a926a37b849e24a8078472092980e4325c5"
+    },
+    {
+      "path": "tests/preview.rs",
+      "sha256": "2880efebe8022c74d5f3b6534cf4aafafbdd49c0a1f80a7da7f8a628a516324f"
+    }
+  ],
+  "scope": "Declared runtime/test/schema/check/skill/documentation/fixture/configuration files. Excludes .pi, target, generated results and Python caches."
+}

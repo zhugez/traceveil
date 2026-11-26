@@ -1,0 +1,13 @@
+# Architecture and adapter development
+
+One synchronous Rust crate exposes a reusable library and a CLI binary. events defines canonical records, adapters handles ingestion, diagnostics consumes sourced events, report defines safe output, and main renders commands. Rules contain no Pi parsing or filesystem access.
+
+Canonical JSONL is parsed one bounded line at a time. Pi v3 needs branch selection first: the first streaming pass indexes bounded entry IDs, parent IDs and physical line numbers; the second analyzes only the selected ancestry. Both complete byte streams must have the same SHA256 before a report is returned. A changed source fails with SOURCE_CHANGED. Malformed/unknown activity breaks continuity. Missing ancestors and duplicate IDs are errors, not repaired inputs.
+
+Correlate started/completed events by call_id. Duplicate calls/results and contradictory tool/argument correlations fail. Context and data boundaries preserve pending identities but exclude their eventual results from sequence heuristics. Correlation entries remain capped at 256, including across boundaries. Unresolved entries are counted once at input end. Overlapping calls are counted but excluded from sequence heuristics because result order is not execution order. Standalone canonical completions require their own observed arguments for operation-level analysis.
+
+Parsing retains no transcript in reports. The core keeps bounded hashes, metadata and an operation window. The Pi index and canonical duplicate-ID sets use O(records) memory under the fixed cap. Per-operation diagnostic work is bounded by the fixed window and maximum pattern width. JSON argument maps still incur their normal parsing/sorting cost. Profile real workloads before further optimization.
+
+To add an adapter, normalize real source records into Event/Data/SourcedEvent, supply physical provenance, preserve session lineage, and report unknown fields/capabilities. Reuse Engine for rules. Supply fixtures that exercise healthy behavior, missing telemetry, branches/correlations and malformed input. Equivalent observable behavior should match the canonical adapter; unavailable evidence must produce skipped coverage. No plugin ABI, mapping DSL, async runtime or external protocol dependency is required.
+
+The installed Pi 1.6.1 source/docs are the format reference checked in this work. Synthetic Pi v3 fixtures are verified. Compatibility with authorized real sessions remains a release gate until separately recorded. The adapter reads raw selected history, not full model context, live state or hidden reasoning. Token/cost/context accounting and external parent-session reconstruction are outside this preview.
