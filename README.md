@@ -6,22 +6,22 @@
 
 Traceveil finds repeated tool failures, possible execution loops and potentially redundant reads in local coding-agent sessions. Every finding links to recorded evidence. Use it when an agent keeps retrying, repeats a sequence or rereads the same material.
 
-**0.2.0-rc.1 · unreleased candidate.** The installed binary runs offline. No public npm, crates.io or Homebrew channel is verified for this candidate.
+**0.2.0-rc.1 · Linux prerelease.** The installed binary runs offline. No public npm, crates.io or Homebrew channel is verified for this candidate.
 
 ## Try it
 
-The one-line installer is prepared for publication:
+Install on Linux/WSL x86_64 with glibc 2.34 or newer:
 
 ~~~sh
 curl -fsSL https://github.com/zhugez/traceveil/raw/main/install.sh | sh
 ~~~
 
-**Not live yet.** The root script and its pinned release asset must be published together. It installs the Linux/WSL x86_64 glibc build without sudo or Rust. The archive checksum is embedded in the installer. See [one-line installer checks](benchmarks/results/one-line-installation.json).
+The installer downloads the pinned release without sudo or Rust. It verifies the archive SHA256 and preserves shell profiles. See the [public HTTPS installation check](benchmarks/results/public-one-line-installation.json) and [installer regression checks](benchmarks/results/one-line-installation.json).
 
-Until publication, install from this candidate source checkout:
+Add the default installation directory to PATH if needed, then try the demo:
 
 ~~~sh
-cargo install --path . --locked
+export PATH="$HOME/.local/bin:$PATH"
 traceveil demo
 traceveil inspect f001 --demo
 ~~~
@@ -75,7 +75,7 @@ One Rust executable. No runtime cloud, model, database, daemon, mandatory MCP se
 - **Adapters:** Pi session v3, selected recorded lineage; canonical JSONL 1.0. Nested Code Mode activity remains partial.
 - **Runtime acceptance:** Linux x86_64, WSL2/glibc. Windows x86_64 and macOS ARM code compile checks pass; native runtime and installer validation remain release gates.
 - **Other agents:** Claude Code, Codex and OpenCode adapters are not implemented. Detecting a directory is not adapter support.
-- **Distribution:** local native archive, private local npm tarball and source Cargo installation. Installers and release preparation are included. Nothing is published by this checkout.
+- **Distribution:** published Linux native prerelease, source Cargo installation and a private local npm tarball. Public npm, crates.io and Homebrew channels remain unavailable.
 
 Synthetic labels establish regression behavior, not field accuracy. Earlier authorized real-Pi validation established correlation and coverage behavior. It did not establish positive field effectiveness. See [validation](docs/benchmarks.md), [core candidate evidence](benchmarks/results/productization.json) and [release gates](docs/releasing.md).
 

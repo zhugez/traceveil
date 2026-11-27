@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0-rc.1 — unreleased
+## 0.2.0-rc.1 — 2026-11-27 (Linux prerelease)
 
 - Add analyze while preserving diagnose and versioned automation output.
 - Embed a production-engine synthetic demo and source-bound demo inspection.
@@ -12,7 +12,7 @@
 - Preserve correlation, missing-telemetry and source-integrity regression behavior.
 - Make invalid-UTF-8 discovery tests portable without removing the encoding boundary assertion.
 
-This candidate is not published. Platform, installer and registry gates appear in docs/releasing.md.
+The Linux/WSL x86_64 glibc archive and pinned one-line installer are published. Public registry and additional platform gates appear in docs/releasing.md.
 
 ## 0.1.0 — Developer Preview baseline
 

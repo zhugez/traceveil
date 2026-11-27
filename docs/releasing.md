@@ -1,6 +1,6 @@
 # Prepare a release
 
-The candidate version is 0.2.0-rc.1. Preparation is local. This work does not authorize a push, public package, tag, tap update, GitHub release or deployment.
+Version 0.2.0-rc.1 is published as a Linux prerelease. The preparation commands below remain local. Publishing another version requires separate authorization for its push, tag and release. Registry publication and tap updates require separate authorization.
 
 ## Local preparation
 
@@ -25,13 +25,13 @@ The manual release-candidate workflow builds and uploads candidate workflow arti
 
 | Gate | Current status |
 |---|---|
-| Source push | Not authorized for this overhaul |
-| Version tag / public release | Not created; needs separate authorization |
+| Source push | Release commit c1a2375d9274af86f582d31e841a1376675169e3 is published; its full CI run passed |
+| Version tag / public release | v0.2.0-rc.1 is published as a Linux prerelease |
 | npm ownership and publication | Not verified; generated package remains private |
 | crates.io ownership and publication | Not verified; only source installation/package preparation is exercised |
 | Homebrew tap | No verified tap; generated Linux formula needs brew audit/install/test |
 | Native macOS / Windows | Compile checks pass; native runtime and installer checks must run |
-| Remote download install | No release asset exists for this candidate |
+| Remote download install | The documented public HTTPS command, binary identity, demo, inspection and uninstall passed in a disposable HOME; see the [receipt](../benchmarks/results/public-one-line-installation.json) |
 | Maintainer signing | Optional explicit full GPG fingerprint; tested with an isolated disposable key only. No maintainer key was supplied or used |
 | Additional adapters | Require versioned fixtures and authorized real-session evidence |
 
@@ -43,7 +43,7 @@ prepare_release.py generates target/release-prep/install.sh for Linux x86_64. It
 
 After the archive is approved, copy that exact build's generated installer to repository-root install.sh. Publish the exact native archive bytes referenced by the script. A later CI rebuild can have another checksum. Do not promote an installer from one build alongside another build's archive. The generated installer stays outside its payload to avoid a checksum cycle.
 
-The documented raw/main one-line URL becomes usable only after the root script and pinned release asset are both published. This preparation does not authorize a commit, push or release.
+The root script and its exact pinned archive are published for v0.2.0-rc.1. The documented raw/main one-line command was verified over public HTTPS. Packaged documentation and local preparation receipts retain their earlier state. The [public installation receipt](../benchmarks/results/public-one-line-installation.json) records the later publication check. Future preparation does not authorize a commit, push or release.
 
 ## Optional local signing
 

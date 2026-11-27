@@ -1,0 +1,143 @@
+{
+  "status": "public_https_one_line_install_verified",
+  "started_at": "2026-11-27T02:40:53.505544+00:00",
+  "completed_at": "2026-11-27T02:40:57.473240+00:00",
+  "command": "curl -fsSL https://github.com/zhugez/traceveil/raw/main/install.sh | sh",
+  "platform": "Linux x86_64 glibc",
+  "minimum_glibc": "2.34",
+  "release_tag": "v0.2.0-rc.1",
+  "source_commit": "c1a2375d9274af86f582d31e841a1376675169e3",
+  "installer_sha256": "6e828cbfb9b36e1976814248e3190c673cb66bc7e427b5ab4ef1192db0f71290",
+  "archive_sha256_enforced_by_installer": "8f2aee6c1962f5da1891267e5f06e0f126d0587f608e62629fba9725ead42de8",
+  "installed_binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0",
+  "transport": "Real HTTPS using system curl, no download mocks and no GitHub token in child environment",
+  "checks": [
+    {
+      "check": "documented_real_https_pipeline",
+      "started_at": "2026-11-27T02:40:53.507034+00:00",
+      "completed_at": "2026-11-27T02:40:57.256053+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "4ac459b140626f02b529a226c750d1a03f13b4290f67242f6a02e75c704ee355",
+      "stderr_sha256": "36f6b5a379abeeb3126d1ac8e91db2e68de9d0f38700a891c5fe7a3c8835c35d"
+    },
+    {
+      "check": "installed_version",
+      "started_at": "2026-11-27T02:40:57.268658+00:00",
+      "completed_at": "2026-11-27T02:40:57.273406+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "75cc356c841dc8fd1201324e1b4622373682c5b02a8f1c9727bc78fbc08c5052",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "standalone_synthetic_demo",
+      "started_at": "2026-11-27T02:40:57.273498+00:00",
+      "completed_at": "2026-11-27T02:40:57.279258+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "2f8ea186b576d2ab8484093636030ed6171bb1f64184435d8a33635023d051f0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "source_bound_inspection",
+      "started_at": "2026-11-27T02:40:57.279713+00:00",
+      "completed_at": "2026-11-27T02:40:57.285329+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "5e5d2f765f4e7dc689ca63c850e85e9949d4e9064ddf23193691b0373953345a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "uninstall_matching_script",
+      "started_at": "2026-11-27T02:40:57.286057+00:00",
+      "completed_at": "2026-11-27T02:40:57.472271+00:00",
+      "exit_code": 0,
+      "stdout_sha256": "803b5326e7472a4b79ff368f149d05329f15383087442eff846b9bf9d4a739b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "shell_profiles_preserved": true,
+  "unrelated_staging_file_preserved": true,
+  "agent_configuration_created": false,
+  "disposable_home_removed": true,
+  "limitations": [
+    "Pipeline exit status alone is insufficient; installed binary hash, version, demo and inspection were checked separately",
+    "Unsigned local build information is not independent publisher authentication",
+    "No Windows/macOS installer or older-glibc claim"
+  ],
+  "release": {
+    "id": 460101907,
+    "tag": "v0.2.0-rc.1",
+    "published_at": "2026-11-27T02:40:52Z",
+    "prerelease": true,
+    "source_commit": "c1a2375d9274af86f582d31e841a1376675169e3",
+    "assets": {
+      "install.sh": "sha256:6e828cbfb9b36e1976814248e3190c673cb66bc7e427b5ab4ef1192db0f71290",
+      "manifest.json": "sha256:5f77891a6dbea4c100480f9f225b94689b4bc6303cb732f421baa247c02fdbeb",
+      "provenance.json": "sha256:e6fb416b007e72f3f190044a6d66dcb770f27843fb15cda9568dfdcf54a1d823",
+      "SHA256SUMS": "sha256:ee9de0bb260d8bada784881ab39dd333b4bb29325b2b88c52aae7632de348958",
+      "traceveil-0.2.0-rc.1-linux-x86_64.tar.gz": "sha256:8f2aee6c1962f5da1891267e5f06e0f126d0587f608e62629fba9725ead42de8"
+    }
+  },
+  "direct_published_archive_rehash": {
+    "method": "GitHub CLI download followed by SHA256 of archive bytes and extracted binary",
+    "archive_sha256": "8f2aee6c1962f5da1891267e5f06e0f126d0587f608e62629fba9725ead42de8",
+    "packaged_binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+  },
+  "release_CI": {
+    "run_id": 45928994819,
+    "head_sha": "c1a2375d9274af86f582d31e841a1376675169e3",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "rust (ubuntu-latest)",
+        "conclusion": "success"
+      },
+      {
+        "name": "contracts-and-dependencies",
+        "conclusion": "success"
+      },
+      {
+        "name": "rust (windows-latest)",
+        "conclusion": "success"
+      },
+      {
+        "name": "rust (macos-latest)",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "build_relation": {
+    "actual_build_git_base": "5db158a24795f8a6c3e0e34e8e850933f0a91165",
+    "dirty_runtime_inputs_at_build": true,
+    "declared_runtime_inputs_match_release_commit": true,
+    "post_build_checkout_policy_change": {
+      ".gitattributes": "bcaf387838e02d906b7d3292afb8c7dbef43eb4a09548baba70426dc0a45c60c"
+    },
+    "limitations": "Declared input comparison and retained build records only; not an independent or hermetic build attestation."
+  },
+  "preflight_secret_scan": {
+    "exit_code": 0,
+    "findings": 0,
+    "scope": "Exact indexed public source and intended release assets, nested archives enabled"
+  },
+  "initial_source_whitespace_check": {
+    "exit_code": 2,
+    "diagnostics": [
+      "benchmarks/results/productization-logs/captured-demo.stdout.log:52: new blank line at EOF.",
+      "benchmarks/results/productization-logs/packaged-source-tests.stdout.log:73: new blank line at EOF.",
+      "benchmarks/results/productization-logs/rust-tests.stdout.log:73: new blank line at EOF.",
+      "docs/examples/demo.txt:52: new blank line at EOF."
+    ],
+    "resolution": "Retained verbatim command output; full staged whitespace check is not reported as passing."
+  },
+  "checkout_regression": {
+    "prior_CI_run": 45928528937,
+    "failure": "Windows checkout converted embedded skill LF frontmatter to CRLF",
+    "fix_commit": "c1a2375d9274af86f582d31e841a1376675169e3",
+    "fresh_CRLF_checkout_byte_identical": [
+      "skills/traceveil/SKILL.md",
+      "skill-data/core.md",
+      "benchmarks/fixtures/demo.jsonl",
+      "benchmarks/fixtures/demo.pi.jsonl"
+    ]
+  },
+  "artifact_rehash_completed_at": "2026-11-27T02:42:14.358378+00:00"
+}

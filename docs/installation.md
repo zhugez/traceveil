@@ -1,10 +1,10 @@
 # Install and uninstall
 
-This candidate is not published. Public npm, crates.io and Homebrew installation commands are intentionally unavailable. Package-name availability does not establish ownership.
+Version 0.2.0-rc.1 is published as a Linux prerelease. Public npm, crates.io and Homebrew installation commands remain unavailable. Package-name availability does not establish ownership.
 
 ## One-line installer
 
-The endpoint is prepared but not published:
+Install on Linux/WSL x86_64 with glibc 2.34 or newer:
 
 ~~~sh
 curl -fsSL https://github.com/zhugez/traceveil/raw/main/install.sh | sh
@@ -16,7 +16,7 @@ The default destination is HOME/.local/bin. Shell profiles remain unchanged. Fol
 
 Piping the script to sh executes code controlled by this repository. Trust the repository or review the script first. The embedded checksum binds archive bytes to that script. It is not independent publisher authentication. An empty or failed curl stream can leave sh returning zero. Check the download error and installed binary rather than relying only on the pipeline exit code.
 
-For review or custom options, download the script to a file, inspect it, and invoke sh install.sh. --prefix, --force and --uninstall retain the manual installer safeguards. Public download validation remains a release gate.
+For review or custom options, download the script to a file, inspect it, and invoke sh install.sh. --prefix, --force and --uninstall retain the manual installer safeguards. The documented command was verified over public HTTPS in a disposable HOME. See the [public installation receipt](../benchmarks/results/public-one-line-installation.json).
 
 ## Source checkout
 
@@ -54,7 +54,7 @@ The default prefix is HOME/.local. TRACEVEIL_HOME or --prefix selects another ab
 export PATH="$HOME/.local/bin:$PATH"
 ~~~
 
-An explicit --version and independently trusted --sha256 can enable a versioned HTTPS release download after a release exists. The manual mode performs no latest lookup. The one-line mode explicitly executes the downloaded repository script. That remote path is not available or validated for this unreleased candidate.
+An explicit --version and independently trusted --sha256 select a versioned HTTPS release download. The manual mode performs no latest lookup. The one-line mode executes the downloaded repository script and pins v0.2.0-rc.1. This public installation path was verified for the published Linux archive.
 
 Checksums detect corruption. They are not signed provenance or proof of publisher identity.
 
