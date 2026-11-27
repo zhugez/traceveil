@@ -1,0 +1,785 @@
+{
+  "status": "local_linux_candidate_validated",
+  "version": "0.2.0-rc.1",
+  "captured_at": "2026-11-27T01:58:12.156251+00:00",
+  "git_commit": "5db158a24795f8a6c3e0e34e8e850933f0a91165",
+  "uncommitted_implementation": true,
+  "environment": {
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.14.10 (main, Oct 26 2026, 00:00:00) [GCC 16.2.1 20260819 (Red Hat 16.2.1-2)]",
+    "npm": "11.16.0",
+    "node_build_tool_only": "v24.18.0",
+    "ruby": "ruby 4.0.9 (2026-10-23 revision 3e93b23afc) +PRISM [x86_64-linux]",
+    "gpg": "gpg (GnuPG) 2.4.9"
+  },
+  "source_manifest": "benchmarks/results/productization-source-manifest.json",
+  "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687",
+  "declared_source_files": 84,
+  "source_unchanged_during_checks": true,
+  "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0",
+  "binary_bytes": 1767296,
+  "runtime_build_inputs": {
+    "command": [
+      "cargo",
+      "build",
+      "--release",
+      "--locked",
+      "--target",
+      "x86_64-unknown-linux-gnu",
+      "--target-dir",
+      "target",
+      "--message-format=json-render-diagnostics"
+    ],
+    "compiler": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+    "output": "target/x86_64-unknown-linux-gnu/release/traceveil",
+    "source_before_sha256": "efe30e2eded2208db34963626cc22d6eadac13c9a69afb40b75c4a5601cc6216",
+    "source_after_sha256": "efe30e2eded2208db34963626cc22d6eadac13c9a69afb40b75c4a5601cc6216",
+    "inputs": {
+      "Cargo.lock": "b8a61373237a936ea23997ed270c25cd8841488af6ed29911f8ff1e49df4f7f4",
+      "Cargo.toml": "cb0659045ece4c923496c04c25e505f35eaa48f41be136032aa6b1b6a498ec4e",
+      "benchmarks/fixtures/demo.jsonl": "1d8b1dde8e85b6574258a78a6baefeb9a3a7ce43e293dde6bcf780ef5f43e0f3",
+      "skill-data/core.md": "7220fc59df3423b0e30d7ff5aff7a5fbaf3a76b001c254c00f678c46ea9fc370",
+      "skills/traceveil/SKILL.md": "a0141b731c8792544a73314917ca9871a02efeab7a33a31ca8772f7086f3a74b",
+      "src/adapter_tests.rs": "b6aaf2a02837ddea3e3376e296ae3d73efe0744555d20c3e52f1255f1bbdda27",
+      "src/adapters.rs": "849b8b6a1cc1567c013dbc947bc74cadad7f27a6f0f3c641dd15c4da6ac00511",
+      "src/diagnostics.rs": "81f330702f99cc5089a1370d8a4b186575f0c4c2b4c0dba1fad12dea9db7aa8d",
+      "src/discovery.rs": "8ff29a18345ffa55e5ea2482f92773ff2cade689399c9f614c2b0369702fccb2",
+      "src/events.rs": "3842de1e3da59a34602e9372fc75a3977d6a52f86e1e4e26e5534593bb163e09",
+      "src/lib.rs": "228cd7303a6d9666bdc051208717b9a4ca355d5f61a4f090480bfbf1daa58326",
+      "src/local_files.rs": "0db6d9832ace56879ccd274c7930bfd5b5d2bf8976af317e7fae63b0c5d275d9",
+      "src/main.rs": "2c9b3552178bdb2b3116d365c77b37ce3997ebf81c5c247afb97d5ebc7d8eff2",
+      "src/presentation.rs": "c59ebe027096b79669410fc4648e43be4d5ae8951b87d10e23d0cb83ffc9e337",
+      "src/prompt.rs": "a3fe8f0aec65de8f5821089bc8724342e2ca0cc3e2c1d3abb5b1c0d133b9e7c0",
+      "src/report.rs": "7e9908e3dce8b68e9a683ca2eb73eaf5da4fc4ba6dc96c23853fb1d0d56d9971",
+      "src/skill_install.rs": "00801e75de4a90d623434b6187f0c4181484a397f4464de676873a1d1e78b29c",
+      "src/user_config.rs": "841d5e7fc969a53ca059ce920916d2f7b5b1d3fb2ac405d955a5354b4d0c0119"
+    },
+    "source_binding": "Source unchanged across successful Cargo build and packaging",
+    "git_commit": "5db158a24795f8a6c3e0e34e8e850933f0a91165",
+    "dirty_runtime_inputs": true
+  },
+  "artifact_evidence": "benchmarks/results/productization-artifacts.json",
+  "source_package_sha256": "329c1328efc9bfb219e34967ddd29a31c213132caabaafed3d399044e418114f",
+  "source_package_includes_required_inputs": true,
+  "source_package_excludes_user_pi": true,
+  "command_receipts": [
+    {
+      "check": "fmt",
+      "argv": [
+        "cargo",
+        "fmt",
+        "--check"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:49.668602+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/fmt.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/fmt.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "clippy",
+      "argv": [
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:49.937880+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/clippy.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/clippy.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "732186322402325172940531d8d6d7cfac85dc902585b2bef6715ad6839dacfd",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "rust-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "--locked"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:50.321444+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/rust-tests.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/rust-tests.stderr.log",
+      "stdout_sha256": "93ddc5b5bfc22a3a6c5e4213510bf23a788726b63c9c8839d7520a5b29139405",
+      "stderr_sha256": "ee7b99c590037120e3bcc7e9a366e8b811bed56151a4ff14f2e22d779b5cb554",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "compile-x86_64-pc-windows-gnu",
+      "argv": [
+        "cargo",
+        "check",
+        "--locked",
+        "--target",
+        "x86_64-pc-windows-gnu"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:51.251444+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/compile-x86_64-pc-windows-gnu.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/compile-x86_64-pc-windows-gnu.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "98d490a0886e35f2107010d4182abd87acb823bc76e24ce58485aa4c4015ba45",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "compile-aarch64-apple-darwin",
+      "argv": [
+        "cargo",
+        "check",
+        "--locked",
+        "--target",
+        "aarch64-apple-darwin"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:53.207923+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/compile-aarch64-apple-darwin.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/compile-aarch64-apple-darwin.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b5ee65cd8ada73b7162209068ace124e83f3fab7e5b73bbd46b052ffc8850078",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "schemas-skills",
+      "argv": [
+        "target/productization-venv/bin/python",
+        "scripts/check_contracts.py",
+        "target/x86_64-unknown-linux-gnu/release/traceveil"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:55.604788+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/schemas-skills.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/schemas-skills.stderr.log",
+      "stdout_sha256": "cbcd4e8f1cadf3c93014507164f28eeafd8da863bd18f78d68b730f7fe73b1b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "shell-syntax",
+      "argv": [
+        "sh",
+        "-n",
+        "scripts/install.sh"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:44:58.353796+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/shell-syntax.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/shell-syntax.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "cargo-package",
+      "argv": [
+        "cargo",
+        "package",
+        "--allow-dirty",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:45:25.206571+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/cargo-package.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/cargo-package.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6fc65964839e7fc5a2b89ff60041f817c2610a21e73f9a0ae0c2c470d2505fc0",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "packaged-source-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "--manifest-path",
+        "target/package/traceveil-0.2.0-rc.1/Cargo.toml",
+        "--locked",
+        "--offline"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:45:32.154981+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/packaged-source-tests.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/packaged-source-tests.stderr.log",
+      "stdout_sha256": "fefe9c740efd9b4a717e41e798faadbb53bac421d300095db86b9008bdd1b11d",
+      "stderr_sha256": "18466f8d231f0f60fdb91aca816444c72fa14ecf45d2a4ac8928d6792360a655",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "audit-version",
+      "argv": [
+        "/tmp/traceveil-audit-tools-24i0609r/cargo-audit",
+        "audit",
+        "--version"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:15.255283+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/audit-version.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/audit-version.stderr.log",
+      "stdout_sha256": "3d7ea9afd517182184d2c9c9d6f1048b2e2147e0f3b1b54a06f13b6f6f49dd01",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "dependency-audit",
+      "argv": [
+        "/tmp/traceveil-audit-tools-24i0609r/cargo-audit",
+        "audit",
+        "--json",
+        "--file",
+        "Cargo.lock"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:15.307587+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/dependency-audit.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/dependency-audit.stderr.log",
+      "stdout_sha256": "d6021ad31fe0a32b36ad2fb421e15db4d2ee584400a3acf92432fc4036f4585e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "deny-version",
+      "argv": [
+        "/tmp/traceveil-audit-tools-24i0609r/cargo-deny",
+        "--version"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:19.078005+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/deny-version.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/deny-version.stderr.log",
+      "stdout_sha256": "4f5284e68393b771a93381b39ba713b86d3e683bfd66a2d1672351fbc2e7c7bf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "dependency-licenses-sources",
+      "argv": [
+        "/tmp/traceveil-audit-tools-24i0609r/cargo-deny",
+        "--format",
+        "json",
+        "check",
+        "licenses",
+        "sources"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:19.113374+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/dependency-licenses-sources.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/dependency-licenses-sources.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "350a4e659b87756e774861bbc12474ba984f5227741de61ebfa37bafe8051370",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "native-npm-package",
+      "argv": [
+        "python3",
+        "scripts/package.py"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:45.720358+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/native-npm-package.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/native-npm-package.stderr.log",
+      "stdout_sha256": "4fe234062c46c76627d53b6ccb0e9a75a0d5250879f4ecf404fe7c9657e3d6ad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "checksums",
+      "argv": [
+        "sha256sum",
+        "-c",
+        "SHA256SUMS"
+      ],
+      "cwd": "/home/dev/repos/traceveil/target/dist",
+      "started_at": "2026-11-27T01:46:48.093541+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/checksums.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/checksums.stderr.log",
+      "stdout_sha256": "ff8ac398f7f0652d615e93125610ce79d089f0c66ed326e617db3267f9046231",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "installation",
+      "argv": [
+        "python3",
+        "scripts/check_install.py"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:48.125393+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/installation.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/installation.stderr.log",
+      "stdout_sha256": "2b29e5924e6ac9328700c702557ad05176de88153ba22906ba711629862aa3af",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "terminal",
+      "argv": [
+        "python3",
+        "scripts/check_terminal.py",
+        "target/x86_64-unknown-linux-gnu/release/traceveil"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:55.833370+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/terminal.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/terminal.stderr.log",
+      "stdout_sha256": "fac49f0e5cee249cd6ed7077b6046ddff46ee4ced5d3d2bc75f1cf6dd68cb3cf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "release-signing",
+      "argv": [
+        "python3",
+        "scripts/check_release.py"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:46:56.975416+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/release-signing.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/release-signing.stderr.log",
+      "stdout_sha256": "f4f3aae031edf62d10367b73bf48cd697fa2338ff5e69050d51665b6b3480324",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "release-preparation",
+      "argv": [
+        "python3",
+        "scripts/prepare_release.py"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:47:04.002373+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/release-preparation.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/release-preparation.stderr.log",
+      "stdout_sha256": "4c43083d713048aba03bf59fc301b767715ee83bbc91af0d11b13fb3790f460e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "captured-demo",
+      "argv": [
+        "python3",
+        "scripts/demo.py",
+        "--binary",
+        "target/x86_64-unknown-linux-gnu/release/traceveil"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:47:04.255575+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/captured-demo.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/captured-demo.stderr.log",
+      "stdout_sha256": "0947ec63568c30a759c568d325e99828677afe81041af2806054e0229ccf424a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "package-reproducibility",
+      "argv": [
+        "python3",
+        "scripts/package.py",
+        "--out-dir",
+        "/tmp/traceveil-repro-s3gg3n3f"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:47:04.461129+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/package-reproducibility.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/package-reproducibility.stderr.log",
+      "stdout_sha256": "4fe234062c46c76627d53b6ccb0e9a75a0d5250879f4ecf404fe7c9657e3d6ad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "diagnostic-labels",
+      "argv": [
+        "python3",
+        "benchmarks/diagnostic/evaluate.py",
+        "--binary",
+        "target/x86_64-unknown-linux-gnu/release/traceveil",
+        "--output",
+        "benchmarks/results/productization-diagnostic.json"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:49:41.379497+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/diagnostic-labels.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/diagnostic-labels.stderr.log",
+      "stdout_sha256": "182a08aaaa71338ac8390a37c74e1b8da14036e3e69f4e96bfc6c7016a153789",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "performance",
+      "argv": [
+        "python3",
+        "benchmarks/performance/measure.py",
+        "--binary",
+        "target/x86_64-unknown-linux-gnu/release/traceveil",
+        "--output",
+        "benchmarks/results/productization-performance.json"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:49:41.611208+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/performance.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/performance.stderr.log",
+      "stdout_sha256": "ac925a19f3f8fcf0cdc7db5fbafe33988d68000b2e87ea9bc5049dccb20d9b9f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "runtime-privacy-syscalls",
+      "argv": [
+        "python3",
+        "scripts/check_runtime.py",
+        "--binary",
+        "target/x86_64-unknown-linux-gnu/release/traceveil"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:49:53.321108+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/runtime-privacy-syscalls.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/runtime-privacy-syscalls.stderr.log",
+      "stdout_sha256": "0248ade1eb212ba08ec372a35f1fd03b5009e2b093d472cb51b5c214bc1c596d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "gitleaks-version",
+      "argv": [
+        "/home/dev/.local/bin/gitleaks",
+        "version"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:49:53.748150+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/gitleaks-version.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/gitleaks-version.stderr.log",
+      "stdout_sha256": "c9fd9ccb6682c54b5fcb0363757b6c6873564e7c067f70b3b5581b611528b9f4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "source-secrets",
+      "argv": [
+        "/home/dev/.local/bin/gitleaks",
+        "dir",
+        "--no-banner",
+        "--no-color",
+        "--redact",
+        "--ignore-gitleaks-allow",
+        "--report-format",
+        "json",
+        "--report-path",
+        "/home/dev/repos/traceveil/benchmarks/results/productization-gitleaks.json",
+        "/tmp/traceveil-public-source-z_a0f2h4"
+      ],
+      "cwd": "/tmp/traceveil-public-source-z_a0f2h4",
+      "started_at": "2026-11-27T01:49:54.470601+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/source-secrets.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/source-secrets.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fe7e53356411bc1b0c0edcdbc591cfadcae7e6b4ea2f5950e0d8ba8ab47b8a9c",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    },
+    {
+      "check": "git-diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "repository",
+      "started_at": "2026-11-27T01:54:16.747352+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/productization-logs/git-diff-check.stdout.log",
+      "stderr": "benchmarks/results/productization-logs/git-diff-check.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_snapshot_sha256": "800d4d7702741ac0c7699de51037d73e69239142f7d000ec53f81ec96be2f687"
+    }
+  ],
+  "observed_rust_tests": {
+    "passed": 48,
+    "failed": 0,
+    "ignored": 0
+  },
+  "observed_packaged_source_tests": {
+    "passed": 48,
+    "failed": 0,
+    "ignored": 0
+  },
+  "observed_contracts": {
+    "canonical_fixtures_validated": 13,
+    "pi_report_schema": "passed",
+    "analyze_demo_policy_schema": "passed",
+    "error_schema": "passed",
+    "inspect_schema": "passed",
+    "skill_frontmatter_and_runtime_examples": "passed"
+  },
+  "observed_terminal_cases": [
+    {
+      "case": "escape",
+      "exit": 0,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "keyboard-demo",
+      "exit": 0,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": true
+    },
+    {
+      "case": "arrow-demo",
+      "exit": 0,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": true
+    },
+    {
+      "case": "ctrl-c",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "external-sigint",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "confirm-ctrl-c",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "input-ctrl-c",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "confirm-external-sigint",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "input-external-sigint",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "consecutive-prompts-success",
+      "exit": 0,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    },
+    {
+      "case": "consecutive-prompts-cancel",
+      "exit": 130,
+      "terminal_restored": true,
+      "cursor_visible": true,
+      "synthetic_report": false
+    }
+  ],
+  "observed_installation": {
+    "version": "0.2.0-rc.1",
+    "platform": "linux-x86_64",
+    "runtime": "Fresh home/directory, PATH=/nonexistent; build caches retained.",
+    "publication": "No publication or remote download performed.",
+    "native_archive_contents": {
+      "files_verified": 39,
+      "entry_hashes": "matched manifest",
+      "onboarding_and_captured_demo": "included"
+    },
+    "native_archive": {
+      "version": "0.2.0-rc.1",
+      "embedded_demo": "passed",
+      "demo_wall_ms": 3.7638789999618893,
+      "discovery_analysis_inspection": "passed",
+      "json": "passed",
+      "configuration": "passed",
+      "skill_lifecycle": "passed",
+      "source_unchanged": true,
+      "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+    },
+    "posix_installer": {
+      "version": "0.2.0-rc.1",
+      "embedded_demo": "passed",
+      "demo_wall_ms": 2.8246689998923102,
+      "discovery_analysis_inspection": "passed",
+      "json": "passed",
+      "configuration": "passed",
+      "skill_lifecycle": "passed",
+      "source_unchanged": true,
+      "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+    },
+    "private_snapshot_permissions": {
+      "directory": "0700",
+      "archive": "0600"
+    },
+    "archive_size_limit": "Sparse archive over 100 MiB rejected before installation",
+    "simulated_download_failure_cleanup": "Partial curl output removed; unrelated staging file and destination preserved. Actual HTTPS release download remains untested.",
+    "archive_filename_option_safety": "Leading-dash archive installed; unrelated files preserved.",
+    "verified_archive_snapshot": "Original replaced at extraction; private verified snapshot installed unchanged.",
+    "installer_refusal_paths": {
+      "checksum_mismatch": "passed",
+      "unowned_force_refusal": "passed",
+      "modified_uninstall_refusal": "passed",
+      "receipted_force_update": "passed",
+      "unrelated_staging_file_preserved": "passed",
+      "uninstall_preserves_config": "passed"
+    },
+    "npm_tarball": {
+      "version": "0.2.0-rc.1",
+      "embedded_demo": "passed",
+      "demo_wall_ms": 2.5709520000418706,
+      "discovery_analysis_inspection": "passed",
+      "json": "passed",
+      "configuration": "passed",
+      "skill_lifecycle": "passed",
+      "source_unchanged": true,
+      "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+    },
+    "cargo_clean_prefix": {
+      "version": "0.2.0-rc.1",
+      "embedded_demo": "passed",
+      "demo_wall_ms": 3.65132100023402,
+      "discovery_analysis_inspection": "passed",
+      "json": "passed",
+      "configuration": "passed",
+      "skill_lifecycle": "passed",
+      "source_unchanged": true,
+      "binary_sha256": "f772c1eded5ed3de67affd3bafe9fad6d85b806c2781b67753cb66a635a0995d"
+    }
+  },
+  "observed_release_signing": {
+    "unsigned_default": "passed",
+    "skipped_build_explicitly_unverified": "passed",
+    "artifact_tamper_refusal": "passed",
+    "explicit_full_fingerprint": "passed",
+    "isolated_signature_verification": "passed",
+    "signature_tamper_rejection": "passed",
+    "stale_signature_refusal": "passed",
+    "original_artifacts_unchanged": true,
+    "publication": false,
+    "signing_key": "Ephemeral test key deleted; no maintainer key used"
+  },
+  "runtime_security": "benchmarks/results/productization-runtime-security.json",
+  "diagnostic_results": "benchmarks/results/productization-diagnostic.json",
+  "performance_results": "benchmarks/results/productization-performance.json",
+  "dependency_audit": "benchmarks/results/productization-audit.json",
+  "license_sources": "benchmarks/results/productization-license-check.jsonl",
+  "source_secret_scan": "benchmarks/results/productization-gitleaks.json",
+  "same_host_artifact_reproducibility": "passed: native archive and private npm artifact bytes/hashes matched across two full preparation runs",
+  "historical_evidence_preserved": {
+    "tracked_files": 72,
+    "unchanged": true,
+    "real_pi_evidence": "benchmarks/results/real-pi-validation.json",
+    "scope": "Historical v0.1 correlation/coverage evidence. Not rerun or claimed as validation of this candidate binary."
+  },
+  "publication": {
+    "pushed": false,
+    "tag_created": false,
+    "release_created": false,
+    "registry_publication": false,
+    "tap_publication": false,
+    "maintainer_key_used": false,
+    "default_artifacts_signed": false
+  },
+  "not_verified_or_not_claimed": [
+    "Native Windows/macOS execution, PowerShell installer execution and Windows terminal cleanup",
+    "Homebrew audit/install/test; only formula Ruby syntax was checked",
+    "Actual versioned HTTPS candidate release download; failure cleanup used a controlled curl stub",
+    "Older-glibc and other Linux distribution ABI portability",
+    "npm/crates/tap ownership, publisher identity and maintainer signing key trust",
+    "Public release, registry package, remote CI run, SLSA level or independent builder attestation",
+    "Full-source independent security endorsement, field diagnostic accuracy or improved agent outcomes"
+  ],
+  "review_scope": "Implementation self-review, actual regressions, local execution and bounded advisor discussion. Advisor decisions do not replace executable evidence. No additional private session was analyzed.",
+  "document_integrity": {
+    "markdown_files_checked": 23,
+    "declared_source_files_checked": 84,
+    "missing_relative_links": [],
+    "trailing_whitespace_findings": [],
+    "license_bytes_unchanged": true,
+    "scope": "Assertions executed by the final verifier after the evidence index was written. Source inventory remained unchanged."
+  },
+  "dependency_tool_bootstrap": [
+    {
+      "repo": "RustSec/rustsec",
+      "tag": "cargo-audit/v0.23.0",
+      "asset": "cargo-audit-x86_64-unknown-linux-gnu-v0.23.0.tgz",
+      "archive_sha256": "b77993532b253fcbf550996d7716465ec3d734d4e74e7f87bfb65a19add0fb59",
+      "binary": "/tmp/traceveil-audit-tools-24i0609r/cargo-audit",
+      "binary_sha256": "bff43720181d3927b7907cdb4f32026dd1d1f032b802278cab102f382d4d8ddc",
+      "verification": "Archive matched the digest returned by the official GitHub release API; no independent signature verification"
+    },
+    {
+      "repo": "EmbarkStudios/cargo-deny",
+      "tag": "0.22.1",
+      "asset": "cargo-deny-0.22.1-x86_64-unknown-linux-musl.tar.gz",
+      "archive_sha256": "13f7e825e9cb811c2f8de63f29b0f45851dfb53004029f0f2501af524728364d",
+      "binary": "/tmp/traceveil-audit-tools-24i0609r/cargo-deny",
+      "binary_sha256": "322e3f2f93a7e5087933246fab48ed287cc4539a43f4087f11843c722b1bd4df",
+      "verification": "Archive matched the digest returned by the official GitHub release API; no independent signature verification"
+    }
+  ],
+  "observed_diagnostic_case_count": 12,
+  "independent_review_scope": "Implementation self-review and bounded advisor discussion of visible decisions/excerpts. No full-source independent security endorsement is claimed.",
+  "check_count_note": "26 successful command receipts preceded the final git-diff-check receipt. The final verifier also asserted relative documentation links, whitespace and unchanged license bytes. These assertions are reported separately, not counted as additional independent tests.",
+  "public_package_internal_state_exclusions": {
+    "archives_checked": 3,
+    "excluded": [
+      ".pi/",
+      ".invar/",
+      "invar.json"
+    ],
+    "inspected_private_state": false,
+    "scope": "Archive entry names and declared source roots only. Excluded state is not approved for publication or commits."
+  },
+  "final_advisor_review": {
+    "scope": "Bounded visible-context review, not independent full-source endorsement",
+    "disposition": "Clarified 26-plus-final-command count, artifact/source bindings and internal-state exclusion. Platform and publication limitations remain explicit."
+  }
+}

@@ -1,0 +1,6 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.16s
+     Running unittests src/lib.rs (target/debug/deps/traceveil-08f58b0a89fcaed7)
+     Running unittests src/main.rs (target/debug/deps/traceveil-1453c71a00559c3c)
+     Running tests/preview.rs (target/debug/deps/preview-643f1df44f62ee9b)
+     Running tests/product.rs (target/debug/deps/product-1b3dedbf3029f655)
+   Doc-tests traceveil

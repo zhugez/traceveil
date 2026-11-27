@@ -1,0 +1,71 @@
+{
+  "version": "0.2.0-rc.1",
+  "platform": "linux-x86_64",
+  "runtime": "Fresh home/directory, PATH=/nonexistent; build caches retained.",
+  "publication": "No publication or remote download performed.",
+  "native_archive_contents": {
+    "files_verified": 39,
+    "entry_hashes": "matched manifest",
+    "onboarding_and_captured_demo": "included"
+  },
+  "native_archive": {
+    "version": "0.2.0-rc.1",
+    "embedded_demo": "passed",
+    "demo_wall_ms": 3.7638789999618893,
+    "discovery_analysis_inspection": "passed",
+    "json": "passed",
+    "configuration": "passed",
+    "skill_lifecycle": "passed",
+    "source_unchanged": true,
+    "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+  },
+  "posix_installer": {
+    "version": "0.2.0-rc.1",
+    "embedded_demo": "passed",
+    "demo_wall_ms": 2.8246689998923102,
+    "discovery_analysis_inspection": "passed",
+    "json": "passed",
+    "configuration": "passed",
+    "skill_lifecycle": "passed",
+    "source_unchanged": true,
+    "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+  },
+  "private_snapshot_permissions": {
+    "directory": "0700",
+    "archive": "0600"
+  },
+  "archive_size_limit": "Sparse archive over 100 MiB rejected before installation",
+  "simulated_download_failure_cleanup": "Partial curl output removed; unrelated staging file and destination preserved. Actual HTTPS release download remains untested.",
+  "archive_filename_option_safety": "Leading-dash archive installed; unrelated files preserved.",
+  "verified_archive_snapshot": "Original replaced at extraction; private verified snapshot installed unchanged.",
+  "installer_refusal_paths": {
+    "checksum_mismatch": "passed",
+    "unowned_force_refusal": "passed",
+    "modified_uninstall_refusal": "passed",
+    "receipted_force_update": "passed",
+    "unrelated_staging_file_preserved": "passed",
+    "uninstall_preserves_config": "passed"
+  },
+  "npm_tarball": {
+    "version": "0.2.0-rc.1",
+    "embedded_demo": "passed",
+    "demo_wall_ms": 2.5709520000418706,
+    "discovery_analysis_inspection": "passed",
+    "json": "passed",
+    "configuration": "passed",
+    "skill_lifecycle": "passed",
+    "source_unchanged": true,
+    "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+  },
+  "cargo_clean_prefix": {
+    "version": "0.2.0-rc.1",
+    "embedded_demo": "passed",
+    "demo_wall_ms": 3.65132100023402,
+    "discovery_analysis_inspection": "passed",
+    "json": "passed",
+    "configuration": "passed",
+    "skill_lifecycle": "passed",
+    "source_unchanged": true,
+    "binary_sha256": "f772c1eded5ed3de67affd3bafe9fad6d85b806c2781b67753cb66a635a0995d"
+  }
+}

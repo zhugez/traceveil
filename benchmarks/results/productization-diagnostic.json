@@ -1,0 +1,204 @@
+{
+  "unit": "case-level presence/absence per rule",
+  "limitations": "Labels specify observable candidate patterns, not established waste or root cause. Held-out cases were labeled before their first diagnostic run. Authored by the implementing agent; not an independent human-labeled dataset.",
+  "counts": {
+    "dev": {
+      "RF001": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      },
+      "LOOP001": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      },
+      "READ001": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      }
+    },
+    "heldout": {
+      "RF001": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      },
+      "LOOP001": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      },
+      "READ001": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0
+      }
+    }
+  },
+  "cases": [
+    {
+      "file": "dev/failures.jsonl",
+      "split": "dev",
+      "expected": [
+        "RF001"
+      ],
+      "observed": [
+        "RF001"
+      ],
+      "cli_wall_ms": 3.631595999650017,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "52b9a89452eebb064d3fa51a35b3311d68403641c767647da2d36bf487abb81d"
+    },
+    {
+      "file": "dev/loop.jsonl",
+      "split": "dev",
+      "expected": [
+        "LOOP001"
+      ],
+      "observed": [
+        "LOOP001"
+      ],
+      "cli_wall_ms": 2.658174999851326,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "bbf423c1368ec52f193d40e2a564e2c8a2b2c663d8b182d390bd7cfbdda7bb5d"
+    },
+    {
+      "file": "dev/reads.jsonl",
+      "split": "dev",
+      "expected": [
+        "READ001"
+      ],
+      "observed": [
+        "READ001"
+      ],
+      "cli_wall_ms": 2.689686999474361,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "98cd006c02d18f4368c468c2ab37ed9018a0a4bd0436656700abdcf21310b11c"
+    },
+    {
+      "file": "dev/healthy.jsonl",
+      "split": "dev",
+      "expected": [],
+      "observed": [],
+      "cli_wall_ms": 2.759710999271192,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "9a8dc64decbdc66a84c2827500ea1063e1011402341ac215a30a75d010bb0c8d"
+    },
+    {
+      "file": "heldout/persistent-failure.jsonl",
+      "split": "heldout",
+      "expected": [
+        "RF001"
+      ],
+      "observed": [
+        "RF001"
+      ],
+      "cli_wall_ms": 2.734237999902689,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "5d418eaa848071581deeaaceaceb84cc394a4cb4f4afcc16497a5e2d7f245201"
+    },
+    {
+      "file": "heldout/repeated-block.jsonl",
+      "split": "heldout",
+      "expected": [
+        "LOOP001"
+      ],
+      "observed": [
+        "LOOP001"
+      ],
+      "cli_wall_ms": 2.8218429997650674,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "2eab15f242826f0bb636b2241b2d14522dd670bd0186dfa371184140ac5c3cfc"
+    },
+    {
+      "file": "heldout/matching-range.jsonl",
+      "split": "heldout",
+      "expected": [
+        "READ001"
+      ],
+      "observed": [
+        "READ001"
+      ],
+      "cli_wall_ms": 2.428845999929763,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "86b533614a1d084c37ddcd9fe95dd8a0445c4d14c9f2955304c11b89b923f84a"
+    },
+    {
+      "file": "heldout/transient-retry.jsonl",
+      "split": "heldout",
+      "expected": [],
+      "observed": [],
+      "cli_wall_ms": 2.0412300000316463,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "f7902bd8978a66dfcf65d48bf27bb74eea2b11c6f7a9efb148056c66401fb5e1"
+    },
+    {
+      "file": "heldout/deliberate-verification.jsonl",
+      "split": "heldout",
+      "expected": [],
+      "observed": [],
+      "cli_wall_ms": 2.987443000165513,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "784127a17dcf78232baed83ac3d6e480b20f78678f841a0acd354f78f708a761"
+    },
+    {
+      "file": "heldout/changed-content.jsonl",
+      "split": "heldout",
+      "expected": [],
+      "observed": [],
+      "cli_wall_ms": 2.61251100073423,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "d378bcaa34934979f9aa920b4216926756f39ecbe9593a46ac3bc082ccd02ebe"
+    },
+    {
+      "file": "heldout/test-driven-development.jsonl",
+      "split": "heldout",
+      "expected": [],
+      "observed": [],
+      "cli_wall_ms": 3.6956399999326095,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "ab535e9132a9159eb3ff86b8de41a7b8f274699e72ccfa3f110bebe5feb6bca8"
+    },
+    {
+      "file": "heldout/failed-write-side-effect.jsonl",
+      "split": "heldout",
+      "expected": [],
+      "observed": [],
+      "cli_wall_ms": 2.801908000037656,
+      "evidence_fingerprints": "verified",
+      "source_sha256": "e5dfc4c84ad9e3fbc132ccc165f51d31f174867c1997b3aca26670541dc40bec"
+    }
+  ]
+}

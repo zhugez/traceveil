@@ -11,3 +11,5 @@ The sessions command lists actual paths from the authorized directory. Review th
 Traceveil writes only stdout/stderr during analysis. If the caller redirects a report, that caller controls retention and deletion. Build scripts, benchmark scripts and package tools create explicit development artifacts, not hidden runtime data.
 
 Never publish a real transcript merely to reproduce a bug. Prefer a synthetic or deliberately sanitized fixture. Review consent and identifiers separately before any real-data contribution.
+
+Explicit init/config commands write only user configuration. Skill installation writes only the selected Pi scope. These actions do not occur during analysis. Configuration and skill receipts use bounded readers. Unix configuration/skill writes traverse pinned directory handles without following symlinks. Windows includes static reparse checks; adversarial concurrent filesystem mutation on that platform is not validated.

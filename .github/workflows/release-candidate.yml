@@ -1,0 +1,50 @@
+name: release candidate preparation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: dtolnay/rust-toolchain@39008827e6b4319a349e9a42dfc90579dd25f1ca
+        with:
+          components: rustfmt, clippy
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: "3.13"
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets --locked -- -D warnings
+      - run: cargo test --locked
+      - run: cargo build --release --locked
+      - run: python scripts/package.py
+      - if: runner.os != 'Windows'
+        run: python scripts/check_terminal.py target/release/traceveil
+      - if: runner.os == 'Linux'
+        run: python scripts/check_install.py
+      - if: runner.os == 'Linux'
+        run: python scripts/check_release.py
+      - if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $manifest=Get-Content target/dist/manifest.json -Raw | ConvertFrom-Json
+          $artifact=$manifest.artifacts | Where-Object kind -EQ native
+          $prefix=Join-Path $env:RUNNER_TEMP 'traceveil-candidate'
+          ./scripts/install.ps1 -Version $manifest.version -Sha256 $artifact.sha256 -Archive (Join-Path "$pwd/target/dist" $artifact.name) -Prefix $prefix
+          & "$prefix/bin/traceveil.exe" demo --json
+          if ($LASTEXITCODE -ne 0) { throw 'Installed demo failed' }
+          ./scripts/install.ps1 -Uninstall -Prefix $prefix
+      - run: python scripts/prepare_release.py
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: traceveil-candidate-${{ runner.os }}
+          path: |
+            target/dist/*
+            target/release-prep/*
+          if-no-files-found: error
+          retention-days: 14

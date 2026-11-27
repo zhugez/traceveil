@@ -40,6 +40,8 @@ pub struct Warning {
 }
 #[derive(Debug, Serialize)]
 pub struct RuleCoverage {
+    pub suppressed: bool,
+    pub threshold: usize,
     pub rule_id: &'static str,
     pub status: &'static str,
     pub eligible_observations: usize,
@@ -92,6 +94,7 @@ pub struct Report {
     pub source_sha256: String,
     pub adapter: &'static str,
     pub leaf_sha256: Option<String>,
+    pub max_gap_seconds: u32,
     /// Supported parsing and required rule telemetry are complete, not proof of task success.
     pub complete: bool,
     pub coverage: Coverage,
@@ -111,6 +114,7 @@ impl Report {
             source_sha256: String::new(),
             adapter,
             leaf_sha256: None,
+            max_gap_seconds: 600,
             complete: true,
             coverage: Coverage::default(),
             findings: vec![],

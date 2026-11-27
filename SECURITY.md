@@ -8,4 +8,6 @@ Read [the threat model](docs/security/threat-model.md) and [privacy model](docs/
 
 For a suspected vulnerability, use private reporting in the repository Security tab if available. Otherwise request a private channel with a minimal issue. Do not include transcripts, credentials or exploitable private data in public issues. No private reporting address or response-time guarantee is advertised.
 
+Explicit configuration and skill commands create user-authorized setup files. Analysis does not create a cache or mutate agent settings. Installers verify a supplied archive checksum and preserve unowned or modified binaries. Checksums are not signed provenance. Windows/macOS installer and terminal runtime checks remain release gates.
+
 Before release, run the tests, contract checks and dependency checks in CONTRIBUTING.md. Only tested platforms and source formats may be described as supported.

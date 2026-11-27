@@ -1,0 +1,51 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.27
+   Compiling quote v1.0.47
+   Compiling typenum v1.20.1
+   Compiling utf8parse v0.2.2
+   Compiling anstyle v1.0.14
+   Compiling anstyle-parse v1.0.0
+   Compiling anstyle-query v1.1.5
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling colorchoice v1.0.5
+   Compiling libc v0.2.191
+   Compiling serde_core v1.0.229
+   Compiling anstream v1.0.0
+   Compiling zmij v1.0.23
+   Compiling clap_lex v1.1.2
+   Compiling heck v0.5.0
+   Compiling strsim v0.11.1
+   Compiling hybrid-array v0.4.15
+   Compiling clap_builder v4.6.10
+   Compiling serde_json v1.0.154
+   Compiling syn v3.0.10
+   Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
+   Compiling serde v1.0.229
+   Compiling const-oid v0.10.3
+   Compiling unicode-width v0.2.3
+   Compiling console v0.16.6
+   Compiling digest v0.11.3
+   Compiling cpufeatures v0.3.1
+   Compiling time-core v0.1.9
+   Compiling memchr v2.8.3
+   Compiling num-conv v0.2.2
+   Compiling deranged v0.5.9
+   Compiling cfg-if v1.0.5
+   Compiling shell-words v1.1.1
+   Compiling powerfmt v0.2.1
+   Compiling itoa v1.0.19
+   Compiling dialoguer v0.12.0
+   Compiling sha2 v0.11.2
+   Compiling time v0.3.55
+   Compiling clap_derive v4.6.9
+   Compiling serde_derive v1.0.229
+   Compiling clap v4.6.10
+   Compiling clap_complete v4.6.12
+   Compiling traceveil v0.2.0-rc.1 (/home/dev/repos/traceveil/target/package/traceveil-0.2.0-rc.1)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 41.17s
+     Running unittests src/lib.rs (target/package/traceveil-0.2.0-rc.1/target/debug/deps/traceveil-08f58b0a89fcaed7)
+     Running unittests src/main.rs (target/package/traceveil-0.2.0-rc.1/target/debug/deps/traceveil-1453c71a00559c3c)
+     Running tests/preview.rs (target/package/traceveil-0.2.0-rc.1/target/debug/deps/preview-643f1df44f62ee9b)
+     Running tests/product.rs (target/package/traceveil-0.2.0-rc.1/target/debug/deps/product-1b3dedbf3029f655)
+   Doc-tests traceveil

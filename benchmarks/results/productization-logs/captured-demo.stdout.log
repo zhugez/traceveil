@@ -1,0 +1,52 @@
+Synthetic fixture, not a captured real agent run.
+Captured with NO_COLOR=1 and COLUMNS=80.
+$ traceveil demo
+TRACEVEIL — SESSION REPORT
+Debug your coding agents.
+
+SYNTHETIC DEMO — generated through the production diagnostic engine.
+
+Agent       Canonical JSONL
+Session     29af1a40c55e511da1da1f33
+Records     14 selected / 14 recorded
+Tool calls  12 (12 results)
+Coverage    Complete for supported observations
+
+FINDINGS
+
+  MEDIUM  Repeated equivalent tool failures
+          3 matching observations · RF001
+          Evidence: @29af1a40c55e511da1da1f33:f001
+          Inspect the original failure and retry policy before another
+          equivalent attempt.
+
+  MEDIUM  Potential execution loop
+          6 matching observations · LOOP001
+          Evidence: @29af1a40c55e511da1da1f33:f002
+          Inspect the repeated sequence and verify whether it produces useful
+          progress.
+
+  LOW  Potentially redundant file reads
+          3 matching observations · READ001
+          Evidence: @29af1a40c55e511da1da1f33:f003
+          Check whether repeated verification is required before removing a
+          read.
+
+COVERAGE
+  RF001    evaluated  9 eligible · threshold 3
+  LOOP001  evaluated  12 eligible · threshold 3
+  READ001  evaluated  3 eligible · threshold 3
+
+NEXT ACTIONS
+  Inspect the original failure and retry policy before another equivalent
+  attempt.
+  Verify intent and original evidence before changing the workflow.
+
+  Inspection template (join wrapped lines):
+  traceveil inspect f001 --demo
+
+Findings are candidates, not proven root causes. Source content stays local.
+
+$ traceveil inspect @29af1a40c55e511da1da1f33:f001 --demo --json
+{"command":"inspect","data":{"complete":true,"coverage":{"complete_reads":3,"known_success":12,"malformed_records":0,"records":14,"rules":[{"eligible_observations":9,"limitations":"Exact consecutive failed operations with matching recorded output. Intent and time-based retry policy are unknown.","rule_id":"RF001","status":"evaluated","suppressed":false,"threshold":3},{"eligible_observations":12,"limitations":"Repeated blocks of 2–4 recorded operations. Matching observations do not prove lack of progress.","rule_id":"LOOP001","status":"evaluated","suppressed":false,"threshold":3},{"eligible_observations":3,"limitations":"Consecutive complete matching read ranges. Matching content does not establish that verification was unnecessary.","rule_id":"READ001","status":"evaluated","suppressed":false,"threshold":3}],"selected_records":14,"tool_calls":12,"tool_results":12,"unknown_records":0,"unpaired_calls":0},"evidence_policy":"Metadata and fingerprints only. Source records are untrusted private data.","finding":{"category":"reliability","classification":"heuristic","confidence":"matching_observations","description":"Repeated equivalent tool failures","evidence":[{"arguments_sha256":"46b54e632fb509e603362a785238ddd4c8cecbc6f4c9dfab3715c46f37d34d24","call_record_line":null,"event_ref":"e1.0","exit_code":null,"output_sha256":"e63915f722fcff4947a740a1941c03425e77f7b9e87e7336b09a6a5afdaf1834","read_range_complete":null,"record_line":1,"source_event_sha256":"5c88e7a226e11ad1204cb8d30cd5d6ff6cba69bc32da73134928e17c90c54086","success":false,"tool":"bash"},{"arguments_sha256":"46b54e632fb509e603362a785238ddd4c8cecbc6f4c9dfab3715c46f37d34d24","call_record_line":null,"event_ref":"e2.0","exit_code":null,"output_sha256":"e63915f722fcff4947a740a1941c03425e77f7b9e87e7336b09a6a5afdaf1834","read_range_complete":null,"record_line":2,"source_event_sha256":"8b5cc4df7eec7d32a7814eca4af047ae33b2d52342667715682e19c25b0b9faa","success":false,"tool":"bash"},{"arguments_sha256":"46b54e632fb509e603362a785238ddd4c8cecbc6f4c9dfab3715c46f37d34d24","call_record_line":null,"event_ref":"e3.0","exit_code":null,"output_sha256":"e63915f722fcff4947a740a1941c03425e77f7b9e87e7336b09a6a5afdaf1834","read_range_complete":null,"record_line":3,"source_event_sha256":"ac0f09c0f8bf5e7a4b063d863255f16d8ce9abe600e288d934cf313bcbff63eb","success":false,"tool":"bash"}],"evidence_omitted":0,"limitations":"Only exact consecutive arguments, output and status match. Transient retries may be intentional. A failed command can still modify state.","methodology":"Exact consecutive failed operations with matching recorded output. Intent and time-based retry policy are unknown.","occurrences":3,"recommendation":"Inspect the original failure and retry policy before another equivalent attempt.","reference":"@29af1a40c55e511da1da1f33:f001","rule_id":"RF001","severity":"medium"},"max_gap_seconds":600,"report_id":"29af1a40c55e511da1da1f33"},"ok":true,"schema_version":"1.0"}
+

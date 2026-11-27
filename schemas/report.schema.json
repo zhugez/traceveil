@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Traceveil diagnose response envelope 1.0",
+  "title": "Traceveil analysis response envelope 1.0",
   "$defs": {
     "Evidence": {
       "type": "object",
@@ -177,6 +177,7 @@
         "schema_version": {
           "const": "1.0"
         },
+        "max_gap_seconds": {"type":"integer","minimum":1,"maximum":86400},
         "traceveil_version": {
           "type": "string"
         },
@@ -286,6 +287,8 @@
                       "skipped"
                     ]
                   },
+                  "threshold": {"type":"integer","minimum":3,"maximum":16},
+                  "suppressed": {"type":"boolean"},
                   "eligible_observations": {
                     "type": "integer",
                     "minimum": 0
@@ -373,7 +376,7 @@
           "const": true
         },
         "command": {
-          "const": "diagnose"
+          "enum": ["analyze", "diagnose", "demo"]
         },
         "data": {
           "$ref": "#/$defs/Report"

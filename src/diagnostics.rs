@@ -26,12 +26,16 @@ pub const RULES: [(&str, &str); 3] = [
 pub struct Settings {
     pub repeat_threshold: usize,
     pub max_gap_seconds: u32,
+    pub rule_thresholds: [Option<usize>; 3],
+    pub disabled_rules: [bool; 3],
 }
 impl Default for Settings {
     fn default() -> Self {
         Self {
             repeat_threshold: 3,
             max_gap_seconds: 600,
+            rule_thresholds: [None; 3],
+            disabled_rules: [false; 3],
         }
     }
 }
@@ -49,7 +53,21 @@ impl Settings {
                 "The maximum known time gap must be between 1 and 86400 seconds.",
             ));
         }
+        if self
+            .rule_thresholds
+            .iter()
+            .flatten()
+            .any(|n| !(3..=16).contains(n))
+        {
+            return Err(Error::new(
+                "CONFIGURATION_INVALID",
+                "Rule thresholds must be between 3 and 16.",
+            ));
+        }
         Ok(self)
+    }
+    fn threshold(self, rule: usize) -> usize {
+        self.rule_thresholds[rule].unwrap_or(self.repeat_threshold)
     }
 }
 struct Call {
@@ -419,10 +437,10 @@ impl Engine {
         } else {
             &self.reads
         };
-        if run.count < self.settings.repeat_threshold {
+        if self.settings.disabled_rules[rule] || run.count < self.settings.threshold(rule) {
             return;
         }
-        if run.count == self.settings.repeat_threshold {
+        if run.count == self.settings.threshold(rule) {
             let count = run.count;
             let evidence = run.evidence.clone();
             let index = self.add_finding(rule, count, evidence);
@@ -440,8 +458,11 @@ impl Engine {
         }
     }
     fn detect_loop(&mut self) {
+        if self.settings.disabled_rules[1] {
+            return;
+        }
         for width in 2..=4 {
-            let length = width * self.settings.repeat_threshold;
+            let length = width * self.settings.threshold(1);
             if self.window.len() < length {
                 continue;
             }
@@ -546,11 +567,14 @@ impl Engine {
             self.warning("INSUFFICIENT_TELEMETRY", None);
         }
         self.report.source_sha256 = source_sha256;
+        self.report.max_gap_seconds = self.settings.max_gap_seconds;
         self.report.leaf_sha256 = leaf.map(digest);
         for (i, (rule, limitations)) in RULES.iter().enumerate() {
             self.report.coverage.rules.push(RuleCoverage {
                 rule_id: rule,
-                status: if self.eligible[i] == 0 {
+                suppressed: self.settings.disabled_rules[i],
+                threshold: self.settings.threshold(i),
+                status: if self.settings.disabled_rules[i] || self.eligible[i] == 0 {
                     "skipped"
                 } else if self.report.complete {
                     "evaluated"
@@ -566,8 +590,9 @@ impl Engine {
                 &self.report.source_sha256,
                 &self.report.session_sha256,
                 &self.report.leaf_sha256,
-                self.settings.repeat_threshold,
+                [0, 1, 2].map(|i| self.settings.threshold(i)),
                 self.settings.max_gap_seconds,
+                self.settings.disabled_rules,
                 VERSION,
             ))
             .unwrap_or_default(),

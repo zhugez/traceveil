@@ -1,13 +1,13 @@
 # Benchmarks and validation
 
-These measurements describe the unreleased local preview candidate. They do not establish field accuracy, improved agent outcomes or superiority over other tools.
+The tables below preserve historical v0.1 preview measurements. Current 0.2.0-rc.1 checks are indexed by [productization evidence](../benchmarks/results/productization.json). Candidate [diagnostic results](../benchmarks/results/productization-diagnostic.json) and [performance results](../benchmarks/results/productization-performance.json) identify their current executable. They do not establish field accuracy, improved agent outcomes or superiority over other tools.
 
 ## Reproduce
 
 ~~~sh
 cargo build --release --locked
-python3 benchmarks/diagnostic/evaluate.py
-python3 benchmarks/performance/measure.py
+python3 benchmarks/diagnostic/evaluate.py --output benchmarks/results/productization-diagnostic.json
+python3 benchmarks/performance/measure.py --output benchmarks/results/productization-performance.json
 python3 scripts/package.py
 python3 scripts/check_install.py
 ~~~

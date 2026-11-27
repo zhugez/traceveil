@@ -1,10 +1,12 @@
-# Developer Preview state
+# Developer Preview evidence — historical v0.1
+
+This record describes the earlier preview. That preview was approved, committed and pushed at 5db158a24795f8a6c3e0e34e8e850933f0a91165. The current 0.2.0-rc.1 work is described in [PRODUCTIZATION.md](PRODUCTIZATION.md). Its receipts use the productization prefix and do not replace this historical evidence.
 
 ## Current status
 
 The local Developer Preview candidate passed the documented checks, including an authorized native Pi v3 real-session evaluation. The user resumed final acceptance after the earlier input blocker was resolved. This document records local evidence. It does not announce a public release or an independent security endorsement.
 
-The repository started at da0bc40664fa902d4c7ba7da3d16199dd8c95a59 with README.md, .gitignore and the existing GPLv3 LICENSE. The implementation remains uncommitted. User-owned .pi state remains outside the implementation and packages.
+The repository started at da0bc40664fa902d4c7ba7da3d16199dd8c95a59 with README.md, .gitignore and the existing GPLv3 LICENSE. The implementation described below was later committed at 5db158a24795f8a6c3e0e34e8e850933f0a91165. User-owned .pi state remains outside the implementation and packages.
 
 ## MVP evidence map
 
@@ -41,4 +43,4 @@ The completion audit also exposed a mixed-telemetry coverage defect. Missing sta
 
 Only Linux x86_64 WSL2/glibc was exercised. Remote CI, macOS/Windows and older-glibc portability remain unverified. The small labeled corpus was authored by the implementer. Its results do not establish field accuracy. Advisor review concerns the visible decisions and excerpts. No full-source security sign-off is claimed.
 
-No commit, push, publication, deployment, license change, transcript upload or agent configuration change was performed. Public release and signed provenance require separate work and authorization. Dashboard, daemon, database, extra agent adapters, live hooks, OTel/ACP and optional integrations remain deferred.
+These validation checks preceded the approved preview commit and push. They did not publish a package, deploy, change the license, upload a transcript or change live agent configuration. Public release and signed provenance require separate work and authorization. Dashboard, daemon, database, extra agent adapters, live hooks, OTel/ACP and optional integrations remain deferred.

@@ -559,3 +559,14 @@ pub fn default_pi_directory() -> Result<PathBuf> {
 #[cfg(test)]
 #[path = "adapter_tests.rs"]
 mod tests;
+
+pub fn validate_paths(paths: &[PathBuf]) -> Result<()> {
+    if paths.iter().any(|p| p.to_str().is_none()) {
+        Err(Error::new(
+            "PATH_ENCODING_UNSUPPORTED",
+            "A session path cannot be represented as UTF-8 JSON.",
+        ))
+    } else {
+        Ok(())
+    }
+}

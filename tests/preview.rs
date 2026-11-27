@@ -758,7 +758,24 @@ fn discovery_rejects_paths_that_would_be_lossily_reencoded() {
     use std::os::unix::ffi::OsStringExt;
     let t = Temp::new();
     let name = std::ffi::OsString::from_vec(vec![255, b'.', b'j', b's', b'o', b'n', b'l']);
-    fs::write(t.0.join(name), b"not read").unwrap();
+    let path = t.0.join(name);
+    assert_eq!(
+        adapters::validate_paths(std::slice::from_ref(&path))
+            .unwrap_err()
+            .code,
+        "PATH_ENCODING_UNSUPPORTED"
+    );
+    if let Err(error) = fs::write(&path, b"not read") {
+        assert_eq!(error.raw_os_error(), Some(libc::EILSEQ));
+        assert!(!path.exists());
+        let out = cli(
+            &["sessions", "--session-dir", t.0.to_str().unwrap(), "--json"],
+            None,
+        );
+        assert_eq!(out.status.code(), Some(0));
+        assert_eq!(data(&out)["data"]["count"], 0);
+        return;
+    }
     let out = cli(
         &["sessions", "--session-dir", t.0.to_str().unwrap(), "--json"],
         None,

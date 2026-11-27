@@ -1,0 +1,248 @@
+{
+  "status": "local_one_line_installer_verified",
+  "command": "curl -fsSL https://github.com/zhugez/traceveil/raw/main/install.sh | sh",
+  "captured_at": "2026-11-27T02:19:00.438261+00:00",
+  "tested_transport": "Stubbed HTTPS only; public endpoint and release were not published or fetched",
+  "observed": {
+    "one_line_command": "curl -fsSL https://github.com/zhugez/traceveil/raw/main/install.sh | sh",
+    "transport": "Stubbed HTTPS only; public endpoint and release were not published or fetched",
+    "pinned_version": "0.2.0-rc.1",
+    "pinned_archive_sha256": "8f2aee6c1962f5da1891267e5f06e0f126d0587f608e62629fba9725ead42de8",
+    "minimum_glibc": "2.34",
+    "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0",
+    "checks": [
+      "default pipe install without version/hash flags",
+      "fresh-home standalone demo with PATH=/nonexistent",
+      "existing install preserved without force",
+      "explicit force update",
+      "checksum failure preserves existing install",
+      "checksum failure leaves no new installation",
+      "older glibc rejected before archive download",
+      "unsupported platform rejected before archive download",
+      "truncated script leaves no installation",
+      "empty pipeline does not install and may exit zero",
+      "uninstall",
+      "profiles and unrelated staging file preserved",
+      "manifest version injection rejected",
+      "manifest glibc injection rejected"
+    ],
+    "publication": false
+  },
+  "source_files": {
+    "install.sh": "6e828cbfb9b36e1976814248e3190c673cb66bc7e427b5ab4ef1192db0f71290",
+    "scripts/install.sh": "32772f7df013099e16d4a6b08e4836d5efee52ca4c18268e78c2f263206d97db",
+    "scripts/package.py": "05b05a1a5b9cc34040b307f1e9edccaa8e9b985446071644cb8ff6974c471364",
+    "scripts/prepare_release.py": "19f0238eccf7ed155d926894a3ce8f14a26c38bb22b3dc980e27550e568462cf",
+    "scripts/check_release.py": "e5fdf6a6fa1be0ee98432912f4f76f7b7a127edb26ef253890c5719ca53443a5",
+    "scripts/check_one_line_install.py": "71d376a5fa0d117be80dc305fe49c6d811df8616dd95470ff7df89387279c23c",
+    "README.md": "3706ed3a8d83950eef0d0ecc63841b746ee01277468752f7068fa9ced150500f",
+    "CONTRIBUTING.md": "a9d76cf75ea1dfa0d4d26cbf5bce3ada891a31b5dc8d7d61bcf434d7c2dd077f",
+    "docs/installation.md": "adaa360c17a251bca54ae858dd73e420cd11eb1934435c3a79f0db6580c6beca",
+    "docs/releasing.md": "66089ce7de6929f12506e7766613d9b68acc9a82261de367d73bca317479dae6"
+  },
+  "root_installer_matches_generated_installer": true,
+  "artifact_manifest": {
+    "version": "0.2.0-rc.1",
+    "build": {
+      "command": [
+        "cargo",
+        "build",
+        "--release",
+        "--locked",
+        "--target",
+        "x86_64-unknown-linux-gnu",
+        "--target-dir",
+        "target",
+        "--message-format=json-render-diagnostics"
+      ],
+      "compiler": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+      "output": "target/x86_64-unknown-linux-gnu/release/traceveil",
+      "source_before_sha256": "efe30e2eded2208db34963626cc22d6eadac13c9a69afb40b75c4a5601cc6216",
+      "source_after_sha256": "efe30e2eded2208db34963626cc22d6eadac13c9a69afb40b75c4a5601cc6216",
+      "inputs": {
+        "Cargo.lock": "b8a61373237a936ea23997ed270c25cd8841488af6ed29911f8ff1e49df4f7f4",
+        "Cargo.toml": "cb0659045ece4c923496c04c25e505f35eaa48f41be136032aa6b1b6a498ec4e",
+        "benchmarks/fixtures/demo.jsonl": "1d8b1dde8e85b6574258a78a6baefeb9a3a7ce43e293dde6bcf780ef5f43e0f3",
+        "skill-data/core.md": "7220fc59df3423b0e30d7ff5aff7a5fbaf3a76b001c254c00f678c46ea9fc370",
+        "skills/traceveil/SKILL.md": "a0141b731c8792544a73314917ca9871a02efeab7a33a31ca8772f7086f3a74b",
+        "src/adapter_tests.rs": "b6aaf2a02837ddea3e3376e296ae3d73efe0744555d20c3e52f1255f1bbdda27",
+        "src/adapters.rs": "849b8b6a1cc1567c013dbc947bc74cadad7f27a6f0f3c641dd15c4da6ac00511",
+        "src/diagnostics.rs": "81f330702f99cc5089a1370d8a4b186575f0c4c2b4c0dba1fad12dea9db7aa8d",
+        "src/discovery.rs": "8ff29a18345ffa55e5ea2482f92773ff2cade689399c9f614c2b0369702fccb2",
+        "src/events.rs": "3842de1e3da59a34602e9372fc75a3977d6a52f86e1e4e26e5534593bb163e09",
+        "src/lib.rs": "228cd7303a6d9666bdc051208717b9a4ca355d5f61a4f090480bfbf1daa58326",
+        "src/local_files.rs": "0db6d9832ace56879ccd274c7930bfd5b5d2bf8976af317e7fae63b0c5d275d9",
+        "src/main.rs": "2c9b3552178bdb2b3116d365c77b37ce3997ebf81c5c247afb97d5ebc7d8eff2",
+        "src/presentation.rs": "c59ebe027096b79669410fc4648e43be4d5ae8951b87d10e23d0cb83ffc9e337",
+        "src/prompt.rs": "a3fe8f0aec65de8f5821089bc8724342e2ca0cc3e2c1d3abb5b1c0d133b9e7c0",
+        "src/report.rs": "7e9908e3dce8b68e9a683ca2eb73eaf5da4fc4ba6dc96c23853fb1d0d56d9971",
+        "src/skill_install.rs": "00801e75de4a90d623434b6187f0c4181484a397f4464de676873a1d1e78b29c",
+        "src/user_config.rs": "841d5e7fc969a53ca059ce920916d2f7b5b1d3fb2ac405d955a5354b4d0c0119"
+      },
+      "source_binding": "Source unchanged across successful Cargo build and packaging",
+      "git_commit": "5db158a24795f8a6c3e0e34e8e850933f0a91165",
+      "dirty_runtime_inputs": true
+    },
+    "platform": "linux-x86_64",
+    "minimum_glibc": "2.34",
+    "artifacts": [
+      {
+        "name": "traceveil-0.2.0-rc.1-linux-x86_64.tar.gz",
+        "kind": "native",
+        "sha256": "8f2aee6c1962f5da1891267e5f06e0f126d0587f608e62629fba9725ead42de8",
+        "bytes": 879303
+      },
+      {
+        "name": "traceveil-0.2.0-rc.1-linux-x86_64.npm.tgz",
+        "kind": "private-local-npm",
+        "sha256": "b46cb2676c7fbd37db4a9862edb6b308a476fe92c995061635fc94413e6726d8",
+        "bytes": 865719
+      }
+    ],
+    "native_files": {
+      "CHANGELOG.md": "b8a2ebd6a2bf62908e4e93e5b2301f53aac5b3ce2a733cd2cce3dd5ca58ec2e7",
+      "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "README.md": "3706ed3a8d83950eef0d0ecc63841b746ee01277468752f7068fa9ced150500f",
+      "SECURITY.md": "1d4a9a17784eea908c8cf141f7485e8213a50d5d702e03d34df6fac6bbc038e2",
+      "assets/brand/README.md": "97abc0700b9ba787d24a04fca9b338131f1ceaa18a47d351988e55def5882254",
+      "assets/brand/readme-banner.svg": "bc59475e88927a24251d71a3c121400f885f66969fe1dc00fc9d7d580d0ff5c5",
+      "assets/brand/social-card.png": "ad85e2683747eaa134130bb9a90aa7df46884697cff6a3c5233ee5f81c91c478",
+      "assets/brand/social-card.svg": "11747e1250064937f73166f0578eb8dc679646fb0a7fdb30f8ffbe3e94142c53",
+      "assets/brand/symbol-monochrome.svg": "cf4019ac65ba6254f7259c14d013396c61a0d8b73e6355c669b6d7e8615e44e7",
+      "assets/brand/symbol.svg": "1371fca9f163eb287a36e85d5d5bd9182de6ff083017f142fa770619f1050152",
+      "assets/brand/wordmark-dark.svg": "970f090fd22f01ba27b605b4d11ff9a6462e6eed3a5aed807a657d7cb2dc6987",
+      "assets/brand/wordmark-light.svg": "8f9001425f4a5575066792c20dfda604b76f75c3790c9b186e7bb952e3d27045",
+      "completions/traceveil.bash": "113c52465c5fd4589169c94b9f1de8df70c9f047736d07f6dfd5f78dc8ff6010",
+      "completions/traceveil.elvish": "bcb5d3e3b6f59fc22522bc4d3f7d3c85d346727ca0d77d053985820dde2db7e6",
+      "completions/traceveil.fish": "b88cba0a9d15ebff4d8dfb69b6e07d48953dd55de7318a91cb8f7544618c9663",
+      "completions/traceveil.powershell": "0595c21b557bccd092cfd9c664488b51b52d235e8ad726e9ffb0d06d2d41461d",
+      "completions/traceveil.zsh": "97058d204d9157b585a4c546ff503c0c05a2795c1a0e1c66e3be5b0150b255ba",
+      "docs/architecture.md": "edb24d9512fe9d2b9056791fe20f89614a35a84904f1f1708a197268dbdd4079",
+      "docs/benchmarks.md": "5fa134ba2a98e0ad514fb0cda3cd3e5e117917fa46ab7b6364fc742844ab8b4e",
+      "docs/configuration.md": "84bdda2b65a21f5fdee2d5a29de830ae58c11f9f243364c10e1acf4b04000fdb",
+      "docs/diagnostics.md": "dddd2c0713918958b52a11db8ec1e91de30bf19200c6ba2e55d84c38219dd2bd",
+      "docs/examples/demo.txt": "0947ec63568c30a759c568d325e99828677afe81041af2806054e0229ccf424a",
+      "docs/getting-started.md": "4e6c8e76f973e058cfbeac4305d6c3f4becc71106c85853082c5b4e32b820223",
+      "docs/installation.md": "adaa360c17a251bca54ae858dd73e420cd11eb1934435c3a79f0db6580c6beca",
+      "docs/pi.md": "179f9bc36d5b5fc2a148990ce16c8c16846844ccac5ca45bf3b6de8149f863fc",
+      "docs/plan/PRODUCTIZATION.md": "82dd4e3255a6358292456301852683f5bcd852d205f967c1ab24627d74eb0104",
+      "docs/plan/PROGRESS.md": "eb652c446cb637a1ab41710401004d8a36012943e3a030d3bb1172e5a27d7c48",
+      "docs/releasing.md": "66089ce7de6929f12506e7766613d9b68acc9a82261de367d73bca317479dae6",
+      "docs/reports.md": "40210b1b41444f009519f7ee07138b09ec6e4952896f99cd54edea4f43407954",
+      "docs/research/competitive-analysis.md": "474cb9b596cddd52dc52198a794005459e651cbc92108bd1301353bfd392d5b3",
+      "docs/research/market-gap.md": "e8a19d1171b461f35b13497c20fb1ff3315b77771b57f79768596aa409396923",
+      "docs/research/vercel-agent-tools-study.md": "88dc462a4d138c730f5920ad738ee13d72a18bf057800a63f3676dca08b8f6a6",
+      "docs/security/privacy-model.md": "a442956270594df77470af0bbbf489841f88ec1e1526e06952c480bd5d0f7ef6",
+      "docs/security/threat-model.md": "2cb6f1fba5496c978db1c398f4fd8c963a6db4c53026835fdf61ecc83cfcf246",
+      "docs/troubleshooting.md": "7820ff99267e12b5c960e8c41c0f2de06c09ccac33681cfaae79603ad286141f",
+      "docs/usage.md": "c585b009e9cab683a973c8e1ec811d81acb50357877cc4d386bdd12510d819f5",
+      "share/traceveil/core.md": "7220fc59df3423b0e30d7ff5aff7a5fbaf3a76b001c254c00f678c46ea9fc370",
+      "share/traceveil/skills/traceveil/SKILL.md": "a0141b731c8792544a73314917ca9871a02efeab7a33a31ca8772f7086f3a74b",
+      "traceveil": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0"
+    },
+    "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0",
+    "publication": "Not published. Local npm preparation is Linux x86_64/glibc only, private, and contains no scripts or downloader.",
+    "provenance": "Checksums and self-reported local build metadata; unsigned. No independent builder attestation is asserted."
+  },
+  "command_receipts": [
+    {
+      "check": "shell-syntax",
+      "argv": [
+        "sh",
+        "-n",
+        "install.sh"
+      ],
+      "started_at": "2026-11-27T02:16:41.479721+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/one-line-install-logs/shell-syntax.stdout.log",
+      "stderr": "benchmarks/results/one-line-install-logs/shell-syntax.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "piped-one-line",
+      "argv": [
+        "python3",
+        "scripts/check_one_line_install.py",
+        "--installer",
+        "install.sh"
+      ],
+      "started_at": "2026-11-27T02:16:41.485134+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/one-line-install-logs/piped-one-line.stdout.log",
+      "stderr": "benchmarks/results/one-line-install-logs/piped-one-line.stderr.log",
+      "stdout_sha256": "383fcb184dfd3c7ac12ffb47792d9453115aa4bcc987e7410d6714ad29887d4a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "release-checks",
+      "argv": [
+        "python3",
+        "scripts/check_release.py"
+      ],
+      "started_at": "2026-11-27T02:20:23.251739+00:00",
+      "completed_at": "2026-11-27T02:20:30.123038+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/one-line-install-logs/release-checks.stdout.log",
+      "stderr": "benchmarks/results/one-line-install-logs/release-checks.stderr.log",
+      "stdout_sha256": "722ca8dbea78dba657b83f2459ccc87cf4efe62c0a880028deaf68f646454693",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "manual-install-compatibility",
+      "argv": [
+        "python3",
+        "scripts/check_install.py",
+        "--skip-cargo",
+        "--output",
+        "benchmarks/results/one-line-manual-installation.json"
+      ],
+      "started_at": "2026-11-27T02:16:49.575681+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/one-line-install-logs/manual-install-compatibility.stdout.log",
+      "stderr": "benchmarks/results/one-line-install-logs/manual-install-compatibility.stderr.log",
+      "stdout_sha256": "e1db0dbf8f619e82192497539ea5e708fc52a8db4bcbb7d1aecd8efc85a0ccac",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "diff-check",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at": "2026-11-27T02:20:30.124512+00:00",
+      "completed_at": "2026-11-27T02:20:30.139356+00:00",
+      "exit_code": 0,
+      "stdout": "benchmarks/results/one-line-install-logs/diff-check.stdout.log",
+      "stderr": "benchmarks/results/one-line-install-logs/diff-check.stderr.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "unchanged_runtime_source": true,
+  "reused_core_evidence": {
+    "path": "benchmarks/results/productization.json",
+    "binary_sha256": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0",
+    "scope": "Rust binary and declared runtime inputs are unchanged. Previous core tests retained; no blanket rerun claimed."
+  },
+  "prior_artifacts_preserved": "target/productization-validated-dist",
+  "publication": {
+    "root_url_live": false,
+    "root_contents_lookup": "GitHub contents endpoint returned HTTP 404 during this task",
+    "candidate_release_lookup": "v0.2.0-rc.1 not found during this task",
+    "pushed": false,
+    "release_created": false
+  },
+  "limitations": [
+    "Public HTTPS endpoint was not validated; curl transport was stubbed",
+    "An empty or failed curl stream can leave the sh pipeline exit status zero",
+    "Embedded checksum binds archive bytes to the installer; the repository script remains a code trust boundary",
+    "glibc minimum comes from ELF version needs; other Linux distributions remain unvalidated",
+    "Native Windows/macOS and PowerShell support remain outside this installer scope"
+  ],
+  "artifact_bytes_rehashed_after_tests": true,
+  "packaged_binary_sha256_recomputed": "1a0677be763fea9e1f00f3a5afcd67ffd5f508bb5077f59f0b6dd45ee47b10f0",
+  "baseline_note": "Binary bytes and declared runtime input hashes match the retained productization snapshot, not the last commit. The productization Rust changes remain uncommitted.",
+  "final_advisor_scope": "Bounded visible-context review only. Direct artifact rehashes, accurate rerun timestamps and final diff check added. Public transport remains unverified."
+}
