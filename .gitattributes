@@ -1,0 +1,4 @@
+skills/traceveil/SKILL.md text eol=lf
+skill-data/core.md text eol=lf
+benchmarks/fixtures/demo.jsonl text eol=lf
+benchmarks/fixtures/demo.pi.jsonl text eol=lf
